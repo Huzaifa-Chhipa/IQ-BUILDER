@@ -1,0 +1,12 @@
+{
+  "name": "IQ Builders & Developers - Cinematic Ultra-Premium Luxury Real Estate Development",
+  "description": "A cinematic, ultra-premium construction and luxury real estate development showcase for IQ Builders & Developers. Featuring futuristic architecture, immersive animations, and high-end design.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
