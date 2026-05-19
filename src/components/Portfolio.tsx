@@ -1,48 +1,54 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { Maximize2, ArrowUpRight } from 'lucide-react';
+import img1 from '../assets/images/luxury_skyscraper_hero_1779209684495.png';
+import img2 from '../assets/images/modern_villa_exterior_1779209702440.png';
+import img3 from '../assets/images/luxury_interior_lobby_1779209749556.png';
+import img4 from '../assets/images/commercial_tower_dubai_style_1779209831066.png';
+import img5 from '../assets/images/lifestyle_luxury_balcony_1779209874429.png';
+import img6 from '../assets/images/luxury_apartments_night_1779209804846.png';
 
 const projects = [
   {
     id: 1,
     title: 'Silver Skyline Tower',
     category: 'Commercial',
-    image: './assets/images/luxury_skyscraper_hero_1779209684495.png',
+    image: img1,
     gridArea: 'md:col-span-2 md:row-span-2'
   },
   {
     id: 2,
     title: 'The Azure Residence',
     category: 'Residential',
-    image: './assets/images/modern_villa_exterior_1779209702440.png',
+    image: img2,
     gridArea: 'md:col-span-1 md:row-span-1'
   },
   {
     id: 3,
     title: 'Zenith Grand Lobby',
     category: 'Interior',
-    image: './assets/images/luxury_interior_lobby_1779209749556.png',
+    image: img3,
     gridArea: 'md:col-span-1 md:row-span-1'
   },
   {
     id: 4,
     title: 'Desert Mirage Plaza',
     category: 'Commercial',
-    image: './assets/images/commercial_tower_dubai_style_1779209831066.png',
+    image: img4,
     gridArea: 'md:col-span-1 md:row-span-2'
   },
   {
     id: 5,
     title: 'The Golden Penthouse',
     category: 'Residential',
-    image: './assets/images/lifestyle_luxury_balcony_1779209874429.png',
+    image: img5,
     gridArea: 'md:col-span-1 md:row-span-1'
   },
   {
     id: 6,
     title: 'Metropolis Heights',
     category: 'Apartments',
-    image: './assets/images/luxury_apartments_night_1779209804846.png',
+    image: img6,
     gridArea: 'md:col-span-1 md:row-span-1'
   }
 ];
