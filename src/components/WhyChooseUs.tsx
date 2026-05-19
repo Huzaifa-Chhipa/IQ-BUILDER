@@ -99,7 +99,7 @@ export default function WhyChooseUs() {
                 className="relative overflow-hidden rounded-sm"
             >
                 <img 
-                    src="/src/assets/images/construction_site_drone_1779209773803.png" 
+                    src="./assets/images/construction_site_drone_1779209773803.png" 
                     alt="Construction Site"
                     className="w-full h-full object-cover aspect-[4/3] grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer"
                     referrerPolicy="no-referrer"

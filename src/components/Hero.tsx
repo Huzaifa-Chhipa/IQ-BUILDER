@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black z-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent z-10" />
         <img
-          src="/src/assets/images/luxury_skyscraper_hero_1779209684495.png"
+          src="./assets/images/luxury_skyscraper_hero_1779209684495.png"
           alt="Luxury Skyscraper"
           className="w-full h-full object-cover object-center scale-105"
           referrerPolicy="no-referrer"

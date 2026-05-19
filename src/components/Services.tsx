@@ -6,37 +6,37 @@ const services = [
     title: 'Residential Construction',
     desc: 'Bespoke modern villas and luxury high-rise apartments designed for the ultimate living experience.',
     icon: Home,
-    image: '/src/assets/images/modern_villa_exterior_1779209702440.png'
+    image: './assets/images/modern_villa_exterior_1779209702440.png'
   },
   {
     title: 'Commercial Projects',
     desc: 'Iconic office towers and shopping malls that redefine business and leisure in futuristic cities.',
     icon: Building2,
-    image: '/src/assets/images/commercial_tower_dubai_style_1779209831066.png'
+    image: './assets/images/commercial_tower_dubai_style_1779209831066.png'
   },
   {
     title: 'Interior Design',
     desc: 'Unmatched elegance in interior spaces, blending luxury materials with artistic lighting and grand scale.',
     icon: Palmtree,
-    image: '/src/assets/images/luxury_interior_lobby_1779209749556.png'
+    image: './assets/images/luxury_interior_lobby_1779209749556.png'
   },
   {
     title: 'Architecture Planning',
     desc: 'Precision planning and innovative blueprints that serve as the foundation for tomorrow\'s masterpieces.',
     icon: Ruler,
-    image: '/src/assets/images/architect_blueprint_detail_1779209854095.png'
+    image: './assets/images/architect_blueprint_detail_1779209854095.png'
   },
   {
     title: 'Project Management',
     desc: 'Comprehensive oversight ensuring every detail meets ArchiLux standards and on-time delivery.',
     icon: Briefcase,
-    image: '/src/assets/images/construction_site_drone_1779209773803.png'
+    image: './assets/images/construction_site_drone_1779209773803.png'
   },
   {
     title: 'Renovation & Restoration',
     desc: 'Breathing new life into prestigious historic structures with modern luxury and sustainable upgrades.',
     icon: Hammer,
-    image: '/src/assets/images/lifestyle_luxury_balcony_1779209874429.png'
+    image: './assets/images/lifestyle_luxury_balcony_1779209874429.png'
   }
 ];
 

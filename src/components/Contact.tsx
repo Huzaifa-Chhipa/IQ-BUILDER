@@ -6,7 +6,7 @@ export default function Contact() {
     <section id="contact" className="py-24 md:py-40 bg-navy-deep relative overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-20">
         <img 
-            src="/src/assets/images/lifestyle_luxury_balcony_1779209874429.png" 
+            src="./assets/images/lifestyle_luxury_balcony_1779209874429.png" 
             alt="Office View" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
