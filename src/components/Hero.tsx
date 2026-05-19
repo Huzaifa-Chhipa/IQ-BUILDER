@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useEffect, useState } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
+import skyscraperImg from '../assets/images/luxury_skyscraper_hero_1779209684495.png';
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -33,7 +34,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black z-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent z-10" />
         <img
-          src="./assets/images/luxury_skyscraper_hero_1779209684495.png"
+          src={skyscraperImg}
           alt="Luxury Skyscraper"
           className="w-full h-full object-cover object-center scale-105"
           referrerPolicy="no-referrer"

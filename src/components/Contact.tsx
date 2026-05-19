@@ -1,12 +1,13 @@
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
+import balconyImg from '../assets/images/lifestyle_luxury_balcony_1779209874429.png';
 
 export default function Contact() {
   return (
     <section id="contact" className="py-24 md:py-40 bg-navy-deep relative overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-20">
         <img 
-            src="./assets/images/lifestyle_luxury_balcony_1779209874429.png" 
+            src={balconyImg} 
             alt="Office View" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"

@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ShieldCheck, HardHat, Clock, Award, Users, Zap } from 'lucide-react';
+import constructionSiteImg from '../assets/images/construction_site_drone_1779209773803.png';
 
 const features = [
   {
@@ -99,7 +100,7 @@ export default function WhyChooseUs() {
                 className="relative overflow-hidden rounded-sm"
             >
                 <img 
-                    src="./assets/images/construction_site_drone_1779209773803.png" 
+                    src={constructionSiteImg} 
                     alt="Construction Site"
                     className="w-full h-full object-cover aspect-[4/3] grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer"
                     referrerPolicy="no-referrer"

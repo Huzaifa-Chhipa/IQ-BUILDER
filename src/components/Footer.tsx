@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Facebook, Twitter, Instagram, Linkedin, ArrowUpRight } from 'lucide-react';
 import Logo from './Logo';
+import skyscraperImg from '../assets/images/luxury_skyscraper_hero_1779209684495.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -57,7 +58,7 @@ export default function Footer() {
         {/* Newsletter */}
         <div className="p-12 glass shadow-2xl relative overflow-hidden mb-24 border border-white/10">
             <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none grayscale">
-                <img src="./assets/images/luxury_skyscraper_hero_1779209684495.png" alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src={skyscraperImg} alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
             <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
                 <div>

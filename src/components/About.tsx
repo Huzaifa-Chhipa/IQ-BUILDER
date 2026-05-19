@@ -1,5 +1,7 @@
 import { motion } from 'motion/react';
 import { Quote } from 'lucide-react';
+import blueprintImg from '../assets/images/architect_blueprint_detail_1779209854095.png';
+import architectsAtWorkImg from '../assets/images/architects_at_work_1779209726217.png';
 
 export default function About() {
   return (
@@ -7,7 +9,7 @@ export default function About() {
       {/* Decorative Blueprint Background element */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none">
         <img 
-          src="./assets/images/architect_blueprint_detail_1779209854095.png" 
+          src={blueprintImg} 
           alt="Blueprint" 
           className="w-full h-full object-cover grayscale"
           referrerPolicy="no-referrer"
@@ -26,7 +28,7 @@ export default function About() {
               className="relative aspect-square md:aspect-video lg:aspect-square overflow-hidden rounded-[40px]"
             >
               <img
-                src="./assets/images/architects_at_work_1779209726217.png"
+                src={architectsAtWorkImg}
                 alt="Our Team"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
