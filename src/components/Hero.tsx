@@ -89,7 +89,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="text-sm md:text-base text-gray-400 max-w-md mb-12 font-light leading-relaxed"
+          className="text-sm md:text-base text-white max-w-md mb-12 font-bold leading-relaxed"
         >
           Crafting luxury residential and commercial landscapes with structural precision and timeless architectural integrity.
         </motion.p>
