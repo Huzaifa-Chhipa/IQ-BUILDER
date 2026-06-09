@@ -80,6 +80,7 @@ export default function Portfolio() {
                 className="relative group overflow-hidden rounded-[40px] border border-white/10 w-full md:w-[45%] !h-[600px]"
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
+                onClick={() => setHoveredProject(hoveredProject === project.id ? null : project.id)}
               >
                 <img
                   src={project.image}
@@ -89,7 +90,8 @@ export default function Portfolio() {
                 />
                 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12">
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 peer-active:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12"
+                     style={{ opacity: hoveredProject === project.id ? 1 : undefined }}>
                   <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={hoveredProject === project.id ? { y: 0, opacity: 1 } : {}}
