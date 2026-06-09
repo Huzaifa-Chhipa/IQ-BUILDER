@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
-import { Menu, X, Phone, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/src/lib/utils';
 import Logo from './Logo';
 
@@ -17,11 +18,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Projects', href: '#projects' },
-    { name: 'Services', href: '#services' },
-    { name: 'Philosophy', href: '#about' },
-    { name: 'Expertise', href: '#expertise' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Services', href: '/#services' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Philosophy', href: '/#about' },
+    { name: 'Expertise', href: '/#expertise' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -34,16 +36,12 @@ export default function Navbar() {
     >
       <div className="w-full flex items-center justify-between">
         {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-3 group cursor-pointer"
-        >
+        <Link to="/" className="flex items-center gap-3 group cursor-pointer">
           <Logo height={38} variant="icon" />
           <span className="text-xs md:text-sm font-display font-medium tracking-[0.2em] uppercase text-white">
             IQ <span className="text-amber">BUILDERS & DEVELOPERS</span>
           </span>
-        </motion.div>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">

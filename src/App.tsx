@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from '@/src/components/Navbar';
 import Hero from '@/src/components/Hero';
 import About from '@/src/components/About';
@@ -11,19 +12,40 @@ import Contact from '@/src/components/Contact';
 import Footer from '@/src/components/Footer';
 import Logo from '@/src/components/Logo';
 import { useSmoothScroll } from '@/src/hooks/useSmoothScroll';
+import AboutUs from './pages/AboutUs';
+import ProjectsPage from './pages/Projects';
+import ContactUs from './pages/ContactUs';
+function MainLayout() {
+  return (
+    <>
+      <Navbar />
+      <main className="relative z-10">
+        <Hero />
+        <About />
+        <Services />
+        <WhyChooseUs />
+        <FAQ />
+      </main>
+      <Footer />
+    </>
+  );
+}
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!sessionStorage.getItem('hasShownLoader'));
   const [progress, setProgress] = useState(0);
 
   // Initialize smooth scroll
   useSmoothScroll();
 
   useEffect(() => {
+    if (!loading) return;
+
     const timer = setInterval(() => {
       setProgress((oldProgress) => {
         if (oldProgress >= 100) {
           clearInterval(timer);
+          sessionStorage.setItem('hasShownLoader', 'true');
           setTimeout(() => setLoading(false), 500);
           return 100;
         }
@@ -33,7 +55,7 @@ export default function App() {
     }, 150);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [loading]);
 
   return (
     <div className="relative bg-charcoal min-h-screen selection:bg-gold selection:text-black">
@@ -93,17 +115,14 @@ export default function App() {
             <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 blur-[120px] rounded-full"></div>
           </div>
 
-          <Navbar />
-          <main className="relative z-10">
-            <Hero />
-            <About />
-            <Services />
-            <Portfolio />
-            <WhyChooseUs />
-            <FAQ />
-            <Contact />
-          </main>
-          <Footer />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<MainLayout />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/contact" element={<ContactUs />} />
+            </Routes>
+          </BrowserRouter>
         </motion.div>
       )}
 
