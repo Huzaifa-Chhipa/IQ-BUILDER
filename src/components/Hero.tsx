@@ -108,37 +108,16 @@ export default function Hero() {
           </button>
         </motion.div>
 
-        {/* Counters / Stats in Hero */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 border-t border-white/10 pt-10 w-full opacity-60">
-          {[
-            { label: 'Founded', val: '2008' },
-            { label: 'Projects', val: '450+' },
-            { label: 'Award Wins', val: '22' },
-            { label: 'Countries', val: '14' },
-          ].map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.5 + i * 0.1 }}
-              className="flex flex-col"
-            >
-              <span className="text-2xl font-display font-bold text-white">{stat.val}</span>
-              <span className="text-[10px] uppercase tracking-widest text-white/50">{stat.label}</span>
-            </motion.div>
-          ))}
-        </div>
+        {/* Scroll Indicator */}
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 opacity-50"
+        >
+          <span className="text-[8px] uppercase tracking-[0.5em] text-white">Scroll</span>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent" />
+        </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 opacity-50"
-      >
-        <span className="text-[8px] uppercase tracking-[0.5em] text-white">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent" />
-      </motion.div>
     </section>
   );
 }

@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { Maximize2, ArrowUpRight } from 'lucide-react';
-import img1 from '../assets/images/luxury_skyscraper_hero_1779209684495.png';
-import img2 from '../assets/images/modern_villa_exterior_1779209702440.png';
+import img1 from '../assets/saddar central/Saddar Central-2.png';
+import img2 from '../assets/Madina Park View/park view.png';
 import img3 from '../assets/images/luxury_interior_lobby_1779209749556.png';
 import img4 from '../assets/images/commercial_tower_dubai_style_1779209831066.png';
 import img5 from '../assets/images/lifestyle_luxury_balcony_1779209874429.png';
@@ -11,57 +11,25 @@ import img6 from '../assets/images/luxury_apartments_night_1779209804846.png';
 const projects = [
   {
     id: 1,
-    title: 'Silver Skyline Tower',
-    category: 'Commercial',
+    title: 'Saddar Central',
     image: img1,
     gridArea: 'md:col-span-2 md:row-span-2'
   },
   {
     id: 2,
-    title: 'The Azure Residence',
-    category: 'Residential',
+    title: 'Madina Park View',
     image: img2,
-    gridArea: 'md:col-span-1 md:row-span-1'
-  },
-  {
-    id: 3,
-    title: 'Zenith Grand Lobby',
-    category: 'Interior',
-    image: img3,
-    gridArea: 'md:col-span-1 md:row-span-1'
-  },
-  {
-    id: 4,
-    title: 'Desert Mirage Plaza',
-    category: 'Commercial',
-    image: img4,
-    gridArea: 'md:col-span-1 md:row-span-2'
-  },
-  {
-    id: 5,
-    title: 'The Golden Penthouse',
-    category: 'Residential',
-    image: img5,
-    gridArea: 'md:col-span-1 md:row-span-1'
-  },
-  {
-    id: 6,
-    title: 'Metropolis Heights',
-    category: 'Apartments',
-    image: img6,
-    gridArea: 'md:col-span-1 md:row-span-1'
+    gridArea: 'md:col-span-2 md:row-span-2'
   }
 ];
 
-const categories = ['All', 'Commercial', 'Residential', 'Interior', 'Apartments'];
+const categories = ['All'];
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
-  const filteredProjects = activeCategory === 'All' 
-    ? projects 
-    : projects.filter(p => p.category === activeCategory);
+  const filteredProjects = projects;
 
   return (
     <section id="projects" className="py-24 md:py-40 bg-charcoal">
@@ -85,24 +53,21 @@ export default function Portfolio() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-2 text-[10px] uppercase tracking-widest font-bold border rounded-full transition-all duration-300 ${
-                  activeCategory === cat 
-                    ? 'bg-amber border-amber text-black' 
-                    : 'bg-transparent border-white/10 text-white/50 hover:border-white/30 hover:text-white backdrop-blur-md'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+            <button
+              onClick={() => setActiveCategory('All')}
+              className={`px-6 py-2 text-[10px] uppercase tracking-widest font-bold border rounded-full transition-all duration-300 ${
+                activeCategory === 'All' 
+                  ? 'bg-amber border-amber text-black' 
+                  : 'bg-transparent border-white/10 text-white/50 hover:border-white/30 hover:text-white backdrop-blur-md'
+              }`}
+            >
+              All
+            </button>
           </div>
         </div>
 
         {/* Masonry-style grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 gap-8 h-auto md:h-[1200px]">
+        <div className="flex flex-wrap justify-center gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.div
@@ -112,7 +77,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
-                className={`relative group overflow-hidden rounded-[40px] border border-white/10 ${project.gridArea}`}
+                className="relative group overflow-hidden rounded-[40px] border border-white/10 w-full md:w-[45%] !h-[600px]"
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
               >
@@ -130,7 +95,6 @@ export default function Portfolio() {
                     animate={hoveredProject === project.id ? { y: 0, opacity: 1 } : {}}
                     transition={{ duration: 0.5 }}
                   >
-                    <span className="text-[10px] uppercase tracking-widest bg-amber/20 backdrop-blur-md border border-amber/30 text-amber px-3 py-1 rounded-full mb-3 inline-block">{project.category}</span>
                     <h3 className="text-2xl md:text-3xl font-display font-light text-white mb-6 leading-tight uppercase">{project.title}</h3>
                     
                     <div className="flex items-center gap-4">
@@ -144,6 +108,7 @@ export default function Portfolio() {
             ))}
           </AnimatePresence>
         </div>
+
 
         <motion.div
           initial={{ opacity: 0 }}

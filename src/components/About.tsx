@@ -74,7 +74,7 @@ export default function About() {
               className="text-4xl md:text-6xl font-display font-light mb-8 leading-tight"
             >
               Crafting Timeless <br />
-              <span className="text-amber font-serif italic">Grandeur</span> Since 1992
+              <span className="text-amber font-serif italic">Grandeur</span> Since 2000
             </motion.h2>
 
             <motion.p
@@ -88,9 +88,8 @@ export default function About() {
             </motion.p>
 
             {/* Values / Mission Grid */}
-            <div className="grid sm:grid-cols-2 gap-8 mb-12">
+            <div className="grid sm:grid-cols-1 gap-8 mb-12">
               {[
-                { title: 'Global Vision', desc: 'Expanding horizons across 14 countries with iconic landmarks.' },
                 { title: 'Sustainable Core', desc: 'Integrating green technology into every luxury blueprint.' },
               ].map((item, i) => (
                 <motion.div
@@ -99,7 +98,7 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + i * 0.1 }}
-                  className="bg-white/5 p-8 border border-white/5 rounded-[30px]"
+                  className="bg-white/5 p-8 border border-white/5 rounded-[30px] flex flex-col items-center text-center"
                 >
                   <h3 className="text-amber font-bold uppercase tracking-widest text-[10px] mb-3">{item.title}</h3>
                   <p className="text-white/40 text-sm leading-relaxed font-light">{item.desc}</p>
@@ -113,10 +112,6 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
             >
-              <button className="flex items-center gap-4 text-white hover:text-amber transition-colors font-bold uppercase tracking-[0.2em] text-[10px] px-8 py-4 border border-white/10 rounded-full hover:bg-white/5 transition-all">
-                Learn our Story
-                <span className="w-8 h-[1px] bg-amber" />
-              </button>
             </motion.div>
           </div>
         </div>

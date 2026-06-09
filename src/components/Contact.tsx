@@ -1,8 +1,12 @@
-import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import balconyImg from '../assets/images/lifestyle_luxury_balcony_1779209874429.png';
+import whatsappIcon from '../assets/whatsapp.png';
 
 export default function Contact() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <section id="contact" className="py-24 md:py-40 bg-navy-deep relative overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-20">
@@ -16,8 +20,7 @@ export default function Contact() {
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-24 items-center">
-          <div>
+        <div className="max-w-3xl">
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -42,8 +45,9 @@ export default function Contact() {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Primary Studio</h4>
-                  <p className="text-white/40 font-light">12/F ArchiLux Terminal, Financial District <br />Dubai, UAE</p>
+                  <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Our Studios</h4>
+                  <p className="text-white/40 font-light mb-4">Office number 5046, Central Plaza Shopping Mall, Marstan Road, Karachi</p>
+                  <p className="text-white/40 font-light">Office number 35 and 36, Alharam Center, near Ancle Seria Hospital, Karachi</p>
                 </div>
               </div>
 
@@ -52,8 +56,8 @@ export default function Contact() {
                   <Phone size={24} />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Global Concierge</h4>
-                  <p className="text-white/40 font-light">+971 (04) 555-ARCHI <br /> (24/7 International Desk)</p>
+                  <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Contact Number</h4>
+                  <p className="text-white/40 font-light">0332-2982846 <br /> 0314-1115203</p>
                 </div>
               </div>
 
@@ -67,74 +71,40 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="glass-dark p-10 md:p-16 border border-white/10 shadow-2xl"
-          >
-            <h3 className="text-3xl font-display font-bold text-white mb-10 uppercase tracking-tighter">PROJECT INQUIRY</h3>
-            
-            <form className="space-y-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="relative">
-                  <input 
-                    type="text" 
-                    placeholder="FULL NAME"
-                    className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/20 outline-none focus:border-gold transition-colors text-xs tracking-widest uppercase font-bold"
-                  />
-                </div>
-                <div className="relative">
-                  <input 
-                    type="email" 
-                    placeholder="EMAIL ADDRESS"
-                    className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/20 outline-none focus:border-gold transition-colors text-xs tracking-widest uppercase font-bold"
-                  />
-                </div>
-              </div>
-
-              <div className="relative">
-                <select 
-                  defaultValue=""
-                  className="w-full bg-transparent border-b border-white/20 py-4 text-white/50 outline-none focus:border-gold transition-colors text-xs tracking-widest uppercase font-bold appearance-none cursor-pointer"
-                >
-                  <option value="" disabled>PROJECT CATEGORY</option>
-                  <option className="bg-charcoal">RESIDENTIAL</option>
-                  <option className="bg-charcoal">COMMERCIAL</option>
-                  <option className="bg-charcoal">HOSPITALITY</option>
-                  <option className="bg-charcoal">OTHER</option>
-                </select>
-              </div>
-
-              <div className="relative">
-                <textarea 
-                  rows={4}
-                  placeholder="TELL US ABOUT YOUR VISION"
-                  className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/20 outline-none focus:border-gold transition-colors text-xs tracking-widest uppercase font-bold resize-none"
-                />
-              </div>
-
-              <button className="w-full py-6 bg-gold text-black font-bold uppercase tracking-[0.3em] text-xs flex items-center justify-center gap-3 hover:bg-gold-light transition-all duration-300">
-                SEND MESSAGE <Send size={16} />
-              </button>
-            </form>
-          </motion.div>
         </div>
       </div>
 
-      {/* Floating WhatsApp/Chat Button Placeholder */}
-      <motion.button 
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="fixed bottom-10 right-10 z-40 w-16 h-16 bg-gold text-black rounded-full flex items-center justify-center shadow-2xl border-4 border-black group"
-      >
-        <MessageSquare size={24} />
-        <span className="absolute right-full mr-4 bg-black text-white text-[10px] font-bold uppercase tracking-widest py-2 px-4 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            Chat with concierge
-        </span>
-      </motion.button>
+      {/* Floating WhatsApp Menu */}
+      <div className="fixed bottom-10 right-10 z-50 flex flex-col items-center gap-4">
+        <AnimatePresence>
+            {isMenuOpen && (
+                <>
+                    <motion.a 
+                        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
+                        href="https://wa.me/923322982846" target="_blank" rel="noopener noreferrer"
+                        className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg"
+                    >
+                        03322982846
+                    </motion.a>
+                    <motion.a 
+                        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
+                        href="https://wa.me/923141115203" target="_blank" rel="noopener noreferrer"
+                        className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg"
+                    >
+                        03141115203
+                    </motion.a>
+                </>
+            )}
+        </AnimatePresence>
+        <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="w-16 h-16 rounded-full flex items-center justify-center shadow-2xl border-2 border-white/20 group bg-black/80 backdrop-blur-sm"
+        >
+            <img src={whatsappIcon} alt="WhatsApp" className="w-12 h-12" />
+        </motion.button>
+      </div>
     </section>
   );
 }

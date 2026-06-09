@@ -37,12 +37,6 @@ const services = [
     desc: 'Comprehensive oversight ensuring every detail meets ArchiLux standards and on-time delivery.',
     icon: Briefcase,
     image: constructionSiteImg
-  },
-  {
-    title: 'Renovation & Restoration',
-    desc: 'Breathing new life into prestigious historic structures with modern luxury and sustainable upgrades.',
-    icon: Hammer,
-    image: luxuryBalconyImg
   }
 ];
 
@@ -89,11 +83,11 @@ export default function Services() {
               className="group relative overflow-hidden bg-white/5 border border-white/10 h-[450px] rounded-[40px]"
             >
               {/* Background Image Hover */}
-              <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
+              <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity duration-700">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                  className="w-full h-full object-cover transition-all duration-700 scale-110 group-hover:scale-100"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
@@ -112,9 +106,7 @@ export default function Services() {
                 </p>
                 <div className="flex justify-between items-center group-hover:translate-x-2 transition-transform duration-500 opacity-60 group-hover:opacity-100">
                   <div className="text-amber font-bold uppercase tracking-widest text-[10px]">
-                    Explore Discipline
                   </div>
-                  <span className="text-amber">→</span>
                 </div>
               </div>
 

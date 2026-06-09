@@ -68,9 +68,9 @@ export default function Navbar() {
           animate={{ opacity: 1, x: 0 }}
           className="hidden md:flex items-center gap-4"
         >
-          <button className="bg-amber text-black px-6 py-2 rounded-full text-[10px] uppercase tracking-widest font-bold hover:bg-amber-light transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+          <a href="https://wa.me/923322982846" target="_blank" rel="noopener noreferrer" className="bg-amber text-black px-6 py-2 rounded-full text-[10px] uppercase tracking-widest font-bold hover:bg-amber-light transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
             Book Consultation
-          </button>
+          </a>
         </motion.div>
 
         {/* Mobile Toggle */}
@@ -98,9 +98,9 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-          <button className="bg-gold text-black p-4 font-bold uppercase tracking-widest">
+          <a href="https://wa.me/923322982846" target="_blank" rel="noopener noreferrer" className="bg-gold text-black p-4 font-bold uppercase tracking-widest text-center">
             Book Consultation
-          </button>
+          </a>
         </motion.div>
       )}
     </nav>

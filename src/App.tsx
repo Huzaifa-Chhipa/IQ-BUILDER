@@ -6,7 +6,6 @@ import About from '@/src/components/About';
 import Services from '@/src/components/Services';
 import Portfolio from '@/src/components/Portfolio';
 import WhyChooseUs from '@/src/components/WhyChooseUs';
-import Testimonials from '@/src/components/Testimonials';
 import FAQ from '@/src/components/FAQ';
 import Contact from '@/src/components/Contact';
 import Footer from '@/src/components/Footer';
@@ -101,7 +100,6 @@ export default function App() {
             <Services />
             <Portfolio />
             <WhyChooseUs />
-            <Testimonials />
             <FAQ />
             <Contact />
           </main>

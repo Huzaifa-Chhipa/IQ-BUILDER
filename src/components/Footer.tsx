@@ -55,41 +55,17 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Newsletter */}
-        <div className="p-12 glass shadow-2xl relative overflow-hidden mb-24 border border-white/10">
-            <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none grayscale">
-                <img src={skyscraperImg} alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-            </div>
-            <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
-                <div>
-                    <h3 className="text-3xl font-display font-bold text-white mb-2 uppercase italic tracking-tighter">SUBSCRIBE TO INSIGHTS</h3>
-                    <p className="text-white/50 text-sm font-light">Join the elite list receiving monthly updates on high-end real estate trends.</p>
-                </div>
-                <div className="flex gap-4">
-                    <input 
-                        type="email" 
-                        placeholder="YOUR EMAIL" 
-                        className="flex-1 bg-black/50 border border-white/10 px-6 py-4 text-white text-xs tracking-widest font-bold placeholder:text-white/20 outline-none focus:border-gold transition-colors"
-                    />
-                    <button className="px-8 py-4 bg-gold text-black font-bold uppercase tracking-widest text-xs hover:bg-gold-light transition-colors">
-                        SUBSCRIBE
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-6">
           <p className="text-white/20 text-[10px] uppercase tracking-widest">
             © {currentYear} IQ BUILDERS AND DEVELOPERS. ALL RIGHTS RESERVED.
           </p>
           <div className="flex items-center gap-8">
             <p className="text-white/20 text-[10px] uppercase tracking-widest">
-              CRAFTED BY <span className="text-gold">ARCO DIGITAL</span>
+              CRAFTED BY <span className="text-gold">DIGITAL ELLOY</span>
             </p>
             <div className="w-[1px] h-4 bg-white/10" />
             <p className="text-white/20 text-[10px] uppercase tracking-widest">
-              DUBAI • LONDON • NEW YORK
+              PAKISTAN, KARACHI
             </p>
           </div>
         </div>
