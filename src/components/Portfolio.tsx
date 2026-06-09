@@ -32,7 +32,7 @@ export default function Portfolio() {
   const filteredProjects = projects;
 
   return (
-    <section id="projects" className="py-24 md:py-40 bg-charcoal">
+    <section id="projects" className="py-24 md:py-24 bg-charcoal">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>
@@ -77,7 +77,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
-                className="relative group overflow-hidden rounded-[40px] border border-white/10 w-full md:w-[45%] !h-[600px]"
+                className="relative group overflow-hidden rounded-[40px] border border-white/10 w-full md:w-[45%] flex items-center justify-center bg-black"
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
                 onClick={() => setHoveredProject(hoveredProject === project.id ? null : project.id)}
@@ -85,7 +85,7 @@ export default function Portfolio() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="w-full h-auto object-contain transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
                 
@@ -115,7 +115,7 @@ export default function Portfolio() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="mt-16 flex justify-center"
+          className="mt-8 flex justify-center"
         >
           <button className="px-12 py-5 border border-white/10 hover:border-amber transition-all duration-500 uppercase tracking-[0.3em] font-bold text-[10px] group rounded-full flex items-center gap-3">
             Load More Projects
