@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const faqs = [];
 
@@ -29,13 +30,13 @@ export default function FAQ() {
             <p className="text-white/50 text-lg font-light leading-relaxed mb-12 max-w-2xl">
               Everything you need to know about partnering with ArchiLux for your next landmark project.
             </p>
-            
+
             <div className="p-8 border border-white/10 glass-dark inline-block">
                 <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-4">Need more info?</h4>
                 <p className="text-white/40 text-sm mb-6">Our concierge team is available 24/7 for our global project partners.</p>
-                <a href="#contact" className="text-gold font-bold uppercase tracking-widest text-[10px] underline underline-offset-8">
+                <Link to="/contact" className="text-gold font-bold uppercase tracking-widest text-[10px] underline underline-offset-8">
                     Contact Specialist
-                </a>
+                </Link>
             </div>
           </div>
         </div>
