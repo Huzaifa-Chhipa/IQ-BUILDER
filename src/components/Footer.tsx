@@ -26,7 +26,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-sm mb-10">
-              Architecting the silhouettes of tomorrow's skyline with unparalleled precision and timeless luxury. A legacy built across 14 nations.
+              Architecting the silhouettes of tomorrow's skyline with unparalleled precision and timeless luxury. A legacy built across 10+ nations.
             </p>
             
             {/* Contact Details */}
