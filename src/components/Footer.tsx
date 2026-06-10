@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Facebook, Instagram, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import PolicyModal from './PolicyModal';
 import skyscraperImg from '../assets/images/luxury_skyscraper_hero_1779209684495.png';
