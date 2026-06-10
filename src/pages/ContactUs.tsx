@@ -25,8 +25,8 @@ export default function ContactUs() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Our Studios</h4>
-                  <p className="text-white/60 font-light mb-4">Office number 5046, Central Plaza Shopping Mall, Marstan Road, Karachi</p>
-                  <p className="text-white/60 font-light">Office number 35 and 36, Alharam Center, near Ancle Seria Hospital, Karachi</p>
+                  <p className="text-white/60 font-light mb-4 break-words">Office number 5046, Central Plaza Shopping Mall, Marstan Road, Karachi</p>
+                  <p className="text-white/60 font-light break-words">Office number 35 and 36, Alharam Center, near Ancle Seria Hospital, Karachi</p>
                 </div>
               </div>
 
@@ -36,7 +36,7 @@ export default function ContactUs() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Contact Num</h4>
-                  <p className="text-white/60 font-light">0332-2982846 <br /> 0314-1115203</p>
+                  <p className="text-white/60 font-light break-words">0332-2982846 <br /> 0314-1115203</p>
                 </div>
               </div>
 
@@ -46,13 +46,13 @@ export default function ContactUs() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Projects Email</h4>
-                  <p className="text-white/60 font-light">hasnainqadriiqbuilders@gmail.com <br /> (Encrypted Channel)</p>
+                  <p className="text-white/60 font-light break-words">hasnainqadriiqbuilders@gmail.com <br /> (Encrypted Channel)</p>
                 </div>
               </div>
             </div>
             
             <div className="flex flex-col items-center justify-center bg-gradient-to-br from-white/5 to-white/10 rounded-[20px] md:rounded-[30px] border border-white/10 p-6 md:p-10 text-center w-full">
-                <p className="text-gold font-serif italic text-xl md:text-2xl mb-4 leading-relaxed">
+                <p className="text-gold font-serif italic text-xl md:text-2xl mb-4 leading-relaxed break-words">
                   "Turning complex structural dreams into timeless architectural realities."
                 </p>
                 <span className="text-white/40 text-xs uppercase tracking-widest font-bold">Your Vision, Our Blueprint.</span>
