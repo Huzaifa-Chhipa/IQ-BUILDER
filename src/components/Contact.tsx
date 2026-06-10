@@ -67,7 +67,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Projects Email</h4>
-                  <p className="text-white/40 font-light">visionary@archilux.global <br /> (Encrypted Channel)</p>
+                  <p className="text-white/40 font-light">hasnainqadriiqbuilders@gmail.com <br /> (Encrypted Channel)</p>
                 </div>
               </div>
             </div>

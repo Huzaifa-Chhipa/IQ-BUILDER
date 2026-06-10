@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Facebook, Twitter, Instagram, Linkedin, ArrowUpRight } from 'lucide-react';
+import { Facebook, Instagram, ArrowUpRight } from 'lucide-react';
 import Logo from './Logo';
 import skyscraperImg from '../assets/images/luxury_skyscraper_hero_1779209684495.png';
 
@@ -28,8 +28,26 @@ export default function Footer() {
             <p className="text-white/40 text-sm leading-relaxed max-w-sm mb-10">
               Architecting the silhouettes of tomorrow's skyline with unparalleled precision and timeless luxury. A legacy built across 14 nations.
             </p>
+            
+            {/* Contact Details */}
+            <div className="text-white/40 text-xs space-y-6 mb-10">
+              <div>
+                <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Our Studios</h4>
+                <p>Office number 5046, Central Plaza Shopping Mall, Marstan Road, Karachi</p>
+                <p className="mt-2">Office number 35 and 36, Alharam Center, near Ancle Seria Hospital, Karachi</p>
+              </div>
+              <div>
+                <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Contact Num</h4>
+                <p>0332-2982846 <br/> 0314-1115203</p>
+              </div>
+              <div>
+                <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Projects Email</h4>
+                <p>hasnainqadriiqbuilders@gmail.com <br/> (Encrypted Channel)</p>
+              </div>
+            </div>
+
             <div className="flex items-center gap-6">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+              {[Facebook, Instagram].map((Icon, i) => (
                 <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold transition-all">
                   <Icon size={18} />
                 </a>
