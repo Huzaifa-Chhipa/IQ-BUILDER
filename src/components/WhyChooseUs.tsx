@@ -102,7 +102,7 @@ export default function WhyChooseUs() {
                 <img 
                     src={constructionSiteImg} 
                     alt="Construction Site"
-                    className="w-full h-full object-cover aspect-[4/3] grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer"
+                    className="w-full h-full object-cover aspect-[4/3] transition-all duration-1000 cursor-pointer"
                     referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 border border-gold/20 m-4 pointer-events-none" />
