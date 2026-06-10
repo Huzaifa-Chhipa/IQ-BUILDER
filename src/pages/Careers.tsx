@@ -73,7 +73,7 @@ export default function Careers() {
               </p>
               <a 
                 href="mailto:hasnainqadriiqbuilders@gmail.com"
-                className="inline-block px-6 md:px-8 py-3 md:py-4 bg-gold text-black font-bold uppercase tracking-widest text-xs md:text-sm rounded-full hover:bg-gold/90 transition-all text-center break-all"
+                className="inline-block px-6 md:px-8 py-3 md:py-4 bg-gold text-black font-bold uppercase tracking-widest text-xs md:text-sm rounded-full hover:bg-gold/90 transition-all text-center whitespace-nowrap"
               >
                 hasnainqadriiqbuilders@gmail.com
               </a>
