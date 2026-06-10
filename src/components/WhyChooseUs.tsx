@@ -107,7 +107,7 @@ export default function WhyChooseUs() {
                 />
                 <div className="absolute inset-0 border border-gold/20 m-4 pointer-events-none" />
                 <div className="absolute bottom-10 left-10 text-white">
-                    <span className="text-gold text-4xl font-display font-bold">14+</span>
+                    <span className="text-gold text-4xl font-display font-bold">10+</span>
                     <p className="uppercase tracking-widest text-[10px] font-bold">Years of Perfection</p>
                 </div>
             </motion.div>
