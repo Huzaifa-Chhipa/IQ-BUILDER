@@ -101,9 +101,9 @@ export default function Footer() {
                         {item}
                       </button>
                     ) : (
-                      <span className="text-white/40 text-sm font-light flex items-center gap-2">
+                      <Link to={item === 'Careers' ? '/careers' : '#'} className="text-white/40 hover:text-gold transition-colors text-sm font-light flex items-center gap-2 group">
                         {item}
-                      </span>
+                      </Link>
                     )}
                   </li>
                 ))}
