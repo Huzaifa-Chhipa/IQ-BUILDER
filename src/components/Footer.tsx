@@ -1,16 +1,47 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Facebook, Instagram, ArrowUpRight } from 'lucide-react';
 import Logo from './Logo';
+import PolicyModal from './PolicyModal';
 import skyscraperImg from '../assets/images/luxury_skyscraper_hero_1779209684495.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [modalData, setModalData] = useState<{ isOpen: boolean; title: string; content: React.ReactNode } | null>(null);
+
+  const historyContent = (
+    <div className="space-y-4">
+      <p>IQ Builders & Developers began with a singular vision: to redefine the skyline with architectural masterpieces that blend structural integrity with timeless aesthetic luxury.</p>
+      <p>Over the past decade, we have grown from a boutique architectural firm in Karachi to an international powerhouse, successfully delivering landmark residential and commercial projects across 10+ nations.</p>
+      <p>Our journey is defined by a relentless pursuit of perfection, a commitment to sustainable innovation, and a passion for turning our clients' most complex structural dreams into enduring architectural realities.</p>
+    </div>
+  );
+
+  const sustainabilityContent = (
+    <div className="space-y-4">
+      <p>At IQ Builders & Developers, we are committed to building a greener future. We integrate sustainable practices into every project, from site selection to material sourcing.</p>
+      <p>Our commitment includes reducing waste, optimizing energy efficiency in our designs, and utilizing eco-friendly materials whenever possible to minimize our environmental footprint.</p>
+    </div>
+  );
+
+  const footerModals = {
+    'Terms & Conditions': (
+      <p>By accessing our website, you agree to abide by these terms. We reserve the right to modify these terms at any time. All intellectual property on this site belongs to IQ Builders & Developers.</p>
+    ),
+    'Privacy Policy': (
+      <p>We respect your privacy. We collect only necessary information to improve your experience and process your inquiries. We do not sell your data to third parties.</p>
+    ),
+    'Cookie Policy': (
+      <p>We use cookies to analyze site traffic and improve functionality. By continuing to browse, you agree to our use of cookies.</p>
+    ),
+    'History': historyContent,
+    'Sustainability': sustainabilityContent,
+  };
 
   const links = [
-    { title: 'Company', items: ['History', 'Awards', 'Careers', 'Team', 'Sustainability'] },
+    { title: 'Company', items: ['History', 'Careers', 'Sustainability'] },
     { title: 'Services', items: ['Architecture', 'Construction', 'Interior Design', 'Master Planning', 'Restoration'] },
-    { title: 'Explore', items: ['Projects', 'Insights', 'Events', 'Press Release', 'Investors'] },
-    { title: 'Legal', items: ['Terms & Conditions', 'Privacy Policy', 'Cookie Policy', 'Client Portal'] }
+    { title: 'Legal', items: ['Terms & Conditions', 'Privacy Policy', 'Cookie Policy'] }
   ];
 
   return (
@@ -62,10 +93,18 @@ export default function Footer() {
               <ul className="space-y-4">
                 {group.items.map((item, j) => (
                   <li key={j}>
-                    <a href="#" className="text-white/40 hover:text-gold transition-colors text-sm font-light flex items-center gap-2 group">
-                      {item}
-                      <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
-                    </a>
+                    {group.title === 'Legal' || (group.title === 'Company' && (item === 'History' || item === 'Sustainability')) ? (
+                      <button 
+                        onClick={() => setModalData({ isOpen: true, title: item, content: footerModals[item as keyof typeof footerModals] })}
+                        className="text-white/40 hover:text-gold transition-colors text-sm font-light flex items-center gap-2 group"
+                      >
+                        {item}
+                      </button>
+                    ) : (
+                      <span className="text-white/40 text-sm font-light flex items-center gap-2">
+                        {item}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -88,6 +127,15 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      
+      {modalData && (
+        <PolicyModal 
+          isOpen={modalData.isOpen} 
+          onClose={() => setModalData(null)} 
+          title={modalData.title} 
+          content={modalData.content} 
+        />
+      )}
     </footer>
   );
 }
