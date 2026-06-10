@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useEffect, useState } from 'react';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import skyscraperImg from '../assets/images/luxury_skyscraper_hero_1779209684495.png';
 
 export default function Hero() {
@@ -100,9 +100,9 @@ export default function Hero() {
           transition={{ duration: 1, delay: 1.2 }}
           className="flex flex-col sm:flex-row gap-4 pt-4"
         >
-          <button className="px-10 py-4 bg-white text-black font-bold uppercase tracking-widest text-[10px] rounded-full hover:bg-gray-200 transition-all duration-300">
+          <Link to="/projects" className="px-10 py-4 bg-white text-black font-bold uppercase tracking-widest text-[10px] rounded-full hover:bg-gray-200 transition-all duration-300 text-center">
             Explore Projects
-          </button>
+          </Link>
           <button className="px-10 py-4 bg-white/5 backdrop-blur-md border border-white/20 text-white font-bold uppercase tracking-widest text-[10px] rounded-full hover:bg-white/10 transition-all duration-300">
             Our Philosophy
           </button>
