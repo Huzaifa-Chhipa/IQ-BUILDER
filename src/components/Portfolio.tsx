@@ -3,22 +3,20 @@ import { useState } from 'react';
 import { Maximize2, ArrowUpRight } from 'lucide-react';
 import img1 from '../assets/saddar central/Saddar Central-2.png';
 import img2 from '../assets/Madina Park View/park view.png';
-import saddarPDF from '../assets/saddar central/Saddar Central.pdf';
-import madinaPDF from '../assets/Madina Park View/MADINA PARK VIEW.pdf';
 
 const projects = [
   {
     id: 1,
     title: 'Saddar Central',
     image: img1,
-    pdf: saddarPDF,
+    pdf: '/saddar-central.pdf',
     gridArea: 'md:col-span-2 md:row-span-2'
   },
   {
     id: 2,
     title: 'Madina Park View',
     image: img2,
-    pdf: madinaPDF,
+    pdf: '/madina-park-view.pdf',
     gridArea: 'md:col-span-2 md:row-span-2'
   }
 ];
