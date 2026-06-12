@@ -84,7 +84,7 @@ export default function Hero() {
       {/* Content */}
       <motion.div 
         style={{ opacity }}
-        className="relative z-20 container mx-auto px-6 md:px-12 flex flex-col items-center md:items-start text-center md:text-left"
+        className="relative z-20 mt-32 container mx-auto px-6 md:px-12 flex flex-col items-center md:items-start text-center md:text-left"
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -92,26 +92,28 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.5 }}
           className="flex items-center gap-3 mb-6"
         >
-          <span className="text-amber uppercase tracking-[0.4em] text-[10px] font-bold">Visionary Construction</span>
+          <span className="text-amber uppercase tracking-[0.4em] text-[10px] font-bold">The IQ Builders Philosophy</span>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-6xl md:text-8xl lg:text-9xl font-extralight md:leading-[1.1] mb-8 tracking-tight"
+          className="text-5xl md:text-7xl lg:text-8xl font-extralight md:leading-[1.1] mb-8 tracking-tight"
         >
-          Building The Future <br />
-          <span className="italic font-serif text-amber">With Excellence</span>
+          Crafting Timeless <br />
+          <span className="italic font-serif text-amber">Grandeur Since 2000</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="text-sm md:text-base text-white max-w-md mb-12 font-bold leading-relaxed"
+          className="text-sm md:text-base text-white max-w-lg mb-12 font-bold leading-relaxed"
         >
-          Crafting luxury residential and commercial landscapes with structural precision and timeless architectural integrity.
+          At IQ Builders & Developers, we believe that true luxury is found in the intersection of innovation and precision. Our journey began with a single vision: to redefine the global skyline with buildings that are as sustainable as they are breathtaking.
+          <br /><br />
+          <span className="text-amber font-bold">Sustainable Core:</span> Integrating green technology into every luxury blueprint.
         </motion.p>
 
         <motion.div
