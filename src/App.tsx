@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ScrollToTop from '@/src/components/ScrollToTop';
 import Navbar from '@/src/components/Navbar';
 import Hero from '@/src/components/Hero';
 import ProjectDetails from '@/src/components/ProjectDetails';
@@ -119,6 +120,7 @@ export default function App() {
           </div>
 
           <BrowserRouter>
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<MainLayout />} />
               <Route path="/about-us" element={<AboutUs />} />
