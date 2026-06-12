@@ -11,7 +11,7 @@ export default function Hero() {
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   const scale = useTransform(scrollY, [0, 500], [1, 1.1]);
-  const videoOpacity = useTransform(scrollY, [0, 100], [1, 0]);
+  const videoOpacity = useTransform(scrollY, [0, 500], [1, 0]);
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
