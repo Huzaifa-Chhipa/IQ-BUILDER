@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from '@/src/components/Navbar';
 import Hero from '@/src/components/Hero';
+import ProjectDetails from '@/src/components/ProjectDetails';
 import About from '@/src/components/About';
 import Services from '@/src/components/Services';
 import Portfolio from '@/src/components/Portfolio';
@@ -22,6 +23,7 @@ function MainLayout() {
       <Navbar />
       <main className="relative z-10">
         <Hero />
+        <ProjectDetails />
         <About />
         <Services />
         <WhyChooseUs />
