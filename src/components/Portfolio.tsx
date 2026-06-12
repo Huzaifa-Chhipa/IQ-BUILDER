@@ -3,22 +3,22 @@ import { useState } from 'react';
 import { Maximize2, ArrowUpRight } from 'lucide-react';
 import img1 from '../assets/saddar central/Saddar Central-2.png';
 import img2 from '../assets/Madina Park View/park view.png';
-import img3 from '../assets/images/luxury_interior_lobby_1779209749556.png';
-import img4 from '../assets/images/commercial_tower_dubai_style_1779209831066.png';
-import img5 from '../assets/images/lifestyle_luxury_balcony_1779209874429.png';
-import img6 from '../assets/images/luxury_apartments_night_1779209804846.png';
+import saddarPDF from '../assets/saddar central/Saddar Central.pdf';
+import madinaPDF from '../assets/Madina Park View/MADINA PARK VIEW.pdf';
 
 const projects = [
   {
     id: 1,
     title: 'Saddar Central',
     image: img1,
+    pdf: saddarPDF,
     gridArea: 'md:col-span-2 md:row-span-2'
   },
   {
     id: 2,
     title: 'Madina Park View',
     image: img2,
+    pdf: madinaPDF,
     gridArea: 'md:col-span-2 md:row-span-2'
   }
 ];
@@ -100,7 +100,13 @@ export default function Portfolio() {
                     <h3 className="text-2xl md:text-3xl font-display font-light text-white mb-6 leading-tight uppercase">{project.title}</h3>
                     
                     <div className="flex items-center gap-4">
-                      <button className="flex items-center gap-2 bg-white text-black px-6 py-3 text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-amber transition-colors duration-300">
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(project.pdf, '_blank');
+                        }}
+                        className="flex items-center gap-2 bg-white text-black px-6 py-3 text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-amber transition-colors duration-300"
+                      >
                         View Details <ArrowUpRight size={14} />
                       </button>
                     </div>
