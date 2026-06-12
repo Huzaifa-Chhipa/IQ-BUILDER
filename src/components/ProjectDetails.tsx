@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { useNavigate } from 'react-router-dom';
 
 const sections = [
   {
@@ -26,6 +27,7 @@ const sections = [
 ];
 
 export default function ProjectDetails() {
+  const navigate = useNavigate();
   return (
     <section className="bg-charcoal text-white py-24">
       <div className="container mx-auto px-6 md:px-12">
@@ -60,7 +62,7 @@ export default function ProjectDetails() {
         <div className="p-16 border border-white/10 rounded-[40px] bg-black text-center">
           <h3 className="text-4xl mb-8">Book Your Unit Today</h3>
           <p className="text-white/60 mb-10">Limited units available. Call now to reserve your space in Karachi's next landmark.</p>
-          <button className="px-10 py-4 bg-amber text-black font-bold rounded-full">Contact Sales Team</button>
+          <button onClick={() => navigate('/contact')} className="px-10 py-4 bg-amber text-black font-bold rounded-full">Contact Sales Team</button>
         </div>
       </div>
     </section>
