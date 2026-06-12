@@ -82,7 +82,10 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 container mx-auto px-6 md:px-12 flex flex-col items-center md:items-start text-center md:text-left">
+      <motion.div 
+        style={{ opacity }}
+        className="relative z-20 container mx-auto px-6 md:px-12 flex flex-col items-center md:items-start text-center md:text-left"
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -134,7 +137,7 @@ export default function Hero() {
           <span className="text-[8px] uppercase tracking-[0.5em] text-white">Scroll</span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent" />
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
