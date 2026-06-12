@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import skyscraperImg from '../assets/images/luxury_skyscraper_hero_1779209684495.png';
+import iqVideo from '../assets/video/iq.mp4';
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -10,6 +11,7 @@ export default function Hero() {
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   const scale = useTransform(scrollY, [0, 500], [1, 1.1]);
+  const videoOpacity = useTransform(scrollY, [0, 100], [1, 0]);
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -26,6 +28,21 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="relative h-screen min-h-[700px] w-full overflow-hidden bg-black flex items-center justify-center">
+      {/* Video Overlay */}
+      <motion.div 
+        style={{ opacity: videoOpacity }} 
+        className="absolute inset-0 z-50 bg-black flex items-center justify-center"
+      >
+        <video 
+          src={iqVideo} 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="w-full h-full object-contain" 
+        />
+      </motion.div>
+
       {/* Background Cinematic Image */}
       <motion.div
         style={{ y: y1, scale }}
