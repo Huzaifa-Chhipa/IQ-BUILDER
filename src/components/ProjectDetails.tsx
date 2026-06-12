@@ -53,7 +53,7 @@ export default function ProjectDetails() {
             )}
             {sec.list && (
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {sec.list.map((item, j) => <div key={j} className="p-4 border border-white/10 rounded-xl text-center text-sm">{item}</div>)}
+                {sec.list.map((item, j) => <div key={j} className="p-4 border border-white/10 rounded-xl text-center text-sm hover:bg-amber hover:text-black transition-colors duration-300 cursor-default">{item}</div>)}
               </div>
             )}
           </div>
