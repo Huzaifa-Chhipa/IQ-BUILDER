@@ -86,50 +86,6 @@ export default function Hero() {
         style={{ opacity }}
         className="relative z-20 mt-32 container mx-auto px-6 md:px-12 flex flex-col items-center md:items-start text-center md:text-left"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="flex items-center gap-3 mb-6"
-        >
-          <span className="text-amber uppercase tracking-[0.4em] text-[10px] font-bold">The IQ Builders Philosophy</span>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-5xl md:text-7xl lg:text-8xl font-extralight md:leading-[1.1] mb-8 tracking-tight"
-        >
-          Crafting Timeless <br />
-          <span className="italic font-serif text-amber">Grandeur Since 2000</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="text-sm md:text-base text-white max-w-lg mb-12 font-bold leading-relaxed"
-        >
-          At IQ Builders & Developers, we believe that true luxury is found in the intersection of innovation and precision. Our journey began with a single vision: to redefine the global skyline with buildings that are as sustainable as they are breathtaking.
-          <br /><br />
-          <span className="text-amber font-bold">Sustainable Core:</span> Integrating green technology into every luxury blueprint.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="flex flex-col sm:flex-row gap-4 pt-4"
-        >
-          <Link to="/projects" className="px-10 py-4 bg-white text-black font-bold uppercase tracking-widest text-[10px] rounded-full hover:bg-gray-200 transition-all duration-300 text-center">
-            Explore Projects
-          </Link>
-          <button className="px-10 py-4 bg-white/5 backdrop-blur-md border border-white/20 text-white font-bold uppercase tracking-widest text-[10px] rounded-full hover:bg-white/10 transition-all duration-300">
-            Our Philosophy
-          </button>
-        </motion.div>
-
         {/* Scroll Indicator */}
         <motion.div
           animate={{ y: [0, 10, 0] }}
