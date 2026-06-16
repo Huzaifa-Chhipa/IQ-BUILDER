@@ -10,7 +10,7 @@ const projects = [
     id: 1,
     title: 'Saddar Central',
     image: img1,
-    pdf: '/saddar-central.pdf',
+    slug: 'saddar-central',
     gridArea: 'md:col-span-2 md:row-span-2'
   },
   {

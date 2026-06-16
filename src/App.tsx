@@ -19,6 +19,7 @@ import ProjectsPage from './pages/Projects';
 import Careers from './pages/Careers';
 import ContactUs from './pages/ContactUs';
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
+import SaddarCentralDetailsPage from './pages/SaddarCentralDetailsPage';
 function MainLayout() {
   return (
     <>
@@ -60,7 +61,8 @@ export default function App() {
             <Route path="/" element={<MainLayout />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
+            <Route path="/projects/madina-park-view" element={<ProjectDetailsPage />} />
+            <Route path="/projects/saddar-central" element={<SaddarCentralDetailsPage />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<ContactUs />} />
           </Routes>
