@@ -31,8 +31,7 @@ const projectData: Record<string, any> = {
 };
 
 export default function SaddarCentralDetailsPage() {
-    const { projectId } = useParams();
-    const project = projectId ? projectData[projectId] : null;
+    const project = projectData['saddar-central'];
 
     if (!project) return <div className="text-white p-20 text-center">Project not found</div>;
 
