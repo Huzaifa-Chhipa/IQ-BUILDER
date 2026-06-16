@@ -124,18 +124,6 @@ export default function Portfolio() {
             ))}
           </AnimatePresence>
         </div>
-
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mt-8 flex justify-center"
-        >
-          <button className="px-12 py-5 border border-white/10 hover:border-amber transition-all duration-500 uppercase tracking-[0.3em] font-bold text-[10px] group rounded-full flex items-center gap-3">
-            Load More Projects
-            <span className="w-8 h-[1px] bg-white group-hover:bg-amber transition-colors" />
-          </button>
-        </motion.div>
       </div>
     </section>
   );
