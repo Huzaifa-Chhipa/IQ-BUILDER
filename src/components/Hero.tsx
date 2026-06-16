@@ -45,6 +45,10 @@ export default function Hero() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    // Enable high-quality image smoothing for sharper scaling
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+
     const totalFrames = images.length;
     // Map progress [0, 0.9] to frames so it reaches the final frame slightly before the absolute end
     const animationProgress = Math.min(1, progress / 0.9);
@@ -98,6 +102,8 @@ export default function Hero() {
       if (ctx) {
         ctx.resetTransform();
         ctx.scale(dpr, dpr);
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
       }
       
       drawFrame(scrollYProgress.get());
