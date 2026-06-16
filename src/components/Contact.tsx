@@ -10,118 +10,118 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 md:py-40 bg-navy-deep relative overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-20">
-        <img 
-            src={balconyImg} 
-            alt="Office View" 
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
+        <img
+          src={balconyImg}
+          alt="Office View"
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-black/80" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="max-w-3xl">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-4 block"
-            >
-              Get In Touch
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-7xl font-display font-bold text-white mb-10"
-            >
-              HAVE A <span className="text-gold italic">VISION?</span>
-            </motion.h2>
-            <p className="text-white/60 text-lg mb-12 font-light leading-relaxed max-w-lg">
-              Whether it's a global headquarters or a private island retreat, we are ready to architect your future.
-            </p>
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-gold font-bold uppercase tracking-[0.4em] text-[10px] mb-4 block"
+          >
+            Get In Touch
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-7xl font-display font-bold text-white mb-10"
+          >
+            HAVE A <span className="text-gold italic">VISION?</span>
+          </motion.h2>
+          <p className="text-white/60 text-lg mb-12 font-light leading-relaxed max-w-lg">
+            Whether it's a global headquarters or a private island retreat, we are ready to architect your future.
+          </p>
 
-            <div className="space-y-10">
-              <div className="flex items-start gap-8">
-                <div className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center text-gold">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Our Studios</h4>
-                  <p className="text-white/40 font-light mb-4">Office number 5046, Central Plaza Shopping Mall, Marstan Road, Karachi</p>
-                  <p className="text-white/40 font-light">Office number 35 and 36, Alharam Center, near Ancle Seria Hospital, Karachi</p>
-                </div>
+          <div className="space-y-10">
+            <div className="flex items-start gap-8">
+              <div className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center text-gold">
+                <MapPin size={24} />
               </div>
+              <div>
+                <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Our Studios</h4>
+                <p className="text-white/40 font-light mb-4">Office number 5046, Central Plaza Shopping Mall, Marstan Road, Karachi</p>
+                <p className="text-white/40 font-light">Office number 35 and 36, Alharam Center, near Ancle Seria Hospital, Karachi</p>
+              </div>
+            </div>
 
-              <div className="flex items-start gap-8">
-                <div className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center text-gold">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Contact Number</h4>
-                  <div className="text-white/40 font-light space-y-2 text-sm">
-                    <p className="whitespace-nowrap"><span className="text-gold font-medium">021-32776004</span> (Office IQ Builders)</p>
-                    <p className="whitespace-nowrap"><span className="text-gold font-medium">0314-1115203</span> (Hasnain - Director)</p>
-                    <p className="whitespace-nowrap"><span className="text-gold font-medium">0314-1115203</span> (Ammar - Director of Sales)</p>
-                    <p className="whitespace-nowrap"><span className="text-gold font-medium">021-32776004</span> (Owais)</p>
-                  </div>
-                </div>
+            <div className="flex items-start gap-8">
+              <div className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center text-gold">
+                <Phone size={24} />
               </div>
- 
-              <div className="flex items-start gap-8">
-                <div className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center text-gold">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Projects Email</h4>
-                  <p className="text-white/40 font-light">hasnainqadriiqbuilders@gmail.com <br /> (Encrypted Channel)</p>
+              <div>
+                <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Contact Number</h4>
+                <div className="text-white/40 font-light space-y-2 text-sm">
+                  <p className="whitespace-nowrap"><span className="text-gold font-medium">021-32776004</span> (Office IQ Builders)</p>
+                  <p className="whitespace-nowrap"><span className="text-gold font-medium">0314-1115203</span> (Hasnain Director)</p>
+                  <p className="whitespace-nowrap"><span className="text-gold font-medium">0314-1115203</span> (Ammar Director of Sales)</p>
+                  <p className="whitespace-nowrap"><span className="text-gold font-medium">021-32776004</span> (Owais)</p>
                 </div>
               </div>
             </div>
+
+            <div className="flex items-start gap-8">
+              <div className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center text-gold">
+                <Mail size={24} />
+              </div>
+              <div>
+                <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Projects Email</h4>
+                <p className="text-white/40 font-light">hasnainqadriiqbuilders@gmail.com <br /> (Encrypted Channel)</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
- 
+
       {/* Floating WhatsApp Menu */}
       <div className="fixed bottom-10 right-10 z-50 flex flex-col items-end gap-3">
         <AnimatePresence>
-            {isMenuOpen && (
-                <div className="flex flex-col items-end gap-2 mb-2">
-                    <motion.a 
-                        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                        href="https://wa.me/923141115203" target="_blank" rel="noopener noreferrer"
-                        className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
-                    >
-                      Hasnain (Director) - 03141115203
-                    </motion.a>
-                    <motion.a 
-                        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                        href="https://wa.me/923141115203" target="_blank" rel="noopener noreferrer"
-                        className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
-                    >
-                      Ammar (Sales Director) - 03141115203
-                    </motion.a>
-                    <motion.a 
-                        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                        href="tel:02132776004"
-                        className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
-                    >
-                      Office IQ Builders - 02132776004
-                    </motion.a>
-                    <motion.a 
-                        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                        href="tel:02132776004"
-                        className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
-                    >
-                      Owais - 02132776004
-                    </motion.a>
-                </div>
-            )}
+          {isMenuOpen && (
+            <div className="flex flex-col items-end gap-2 mb-2">
+              <motion.a
+                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
+                href="https://wa.me/923141115203" target="_blank" rel="noopener noreferrer"
+                className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
+              >
+                Hasnain (Director) - 03141115203
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
+                href="https://wa.me/923141115203" target="_blank" rel="noopener noreferrer"
+                className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
+              >
+                Ammar (Sales Director) - 03141115203
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
+                href="tel:02132776004"
+                className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
+              >
+                Office IQ Builders - 02132776004
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
+                href="tel:02132776004"
+                className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
+              >
+                Owais - 02132776004
+              </motion.a>
+            </div>
+          )}
         </AnimatePresence>
-        <motion.button 
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="w-16 h-16 rounded-full flex items-center justify-center shadow-2xl border-2 border-white/20 group bg-black/80 backdrop-blur-sm"
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="w-16 h-16 rounded-full flex items-center justify-center shadow-2xl border-2 border-white/20 group bg-black/80 backdrop-blur-sm"
         >
-            <img src={whatsappIcon} alt="WhatsApp" className="w-12 h-12" />
+          <img src={whatsappIcon} alt="WhatsApp" className="w-12 h-12" />
         </motion.button>
       </div>
     </section>

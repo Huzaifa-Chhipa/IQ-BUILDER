@@ -8,7 +8,7 @@ export default function ContactUs() {
     <div className="bg-navy-deep min-h-screen text-white">
       <Navbar />
       <main className="pt-32 pb-24 container mx-auto px-4 md:px-12">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="max-w-4xl mx-auto w-full"
@@ -16,7 +16,7 @@ export default function ContactUs() {
           <h1 className="text-5xl md:text-7xl font-display font-light text-center mb-16 px-4">
             CONTACT <span className="text-gold italic">US</span>
           </h1>
-          
+
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 glass-dark p-6 md:p-12 rounded-[20px] md:rounded-[40px] border border-white/10">
             <div className="space-y-8 md:space-y-10 w-full">
               <div className="flex items-start gap-4 md:gap-6">
@@ -38,8 +38,8 @@ export default function ContactUs() {
                   <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Contact Num</h4>
                   <div className="text-white/60 font-light space-y-2 text-sm break-all">
                     <p><span className="text-gold font-medium">021-32776004</span> (Office IQ Builders)</p>
-                    <p><span className="text-gold font-medium">0314-1115203</span> (Hasnain - Director)</p>
-                    <p><span className="text-gold font-medium">0314-1115203</span> (Ammar - Director of Sales)</p>
+                    <p><span className="text-gold font-medium">0314-1115203</span> (Hasnain Director)</p>
+                    <p><span className="text-gold font-medium">0314-1115203</span> (Ammar Director of Sales)</p>
                     <p><span className="text-gold font-medium">021-32776004</span> (Owais)</p>
                   </div>
                 </div>
@@ -55,12 +55,12 @@ export default function ContactUs() {
                 </div>
               </div>
             </div>
-            
+
             <div className="flex flex-col items-center justify-center bg-gradient-to-br from-white/5 to-white/10 rounded-[20px] md:rounded-[30px] border border-white/10 p-6 md:p-10 text-center w-full">
-                <p className="text-gold font-serif italic text-xl md:text-2xl mb-4 leading-relaxed break-all">
-                  "Turning complex structural dreams into timeless architectural realities."
-                </p>
-                <span className="text-white/40 text-xs uppercase tracking-widest font-bold">Your Vision, Our Blueprint.</span>
+              <p className="text-gold font-serif italic text-xl md:text-2xl mb-4 leading-relaxed break-all">
+                "Turning complex structural dreams into timeless architectural realities."
+              </p>
+              <span className="text-white/40 text-xs uppercase tracking-widest font-bold">Your Vision, Our Blueprint.</span>
             </div>
           </div>
         </motion.div>
