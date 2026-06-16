@@ -46,7 +46,7 @@ export default function ProjectDetailsPage() {
     if (!project) return <div className="text-white p-20 text-center">Project not found</div>;
 
     return (
-        <div className="bg-charcoal text-white">
+        <div className="bg-obsidian text-white">
             <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
                 <Link to="/projects" className="flex items-center gap-2 text-amber mb-8 hover:underline">
                     <ArrowLeft size={20} /> Back to Projects
