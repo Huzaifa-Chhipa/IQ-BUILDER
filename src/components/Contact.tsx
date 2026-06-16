@@ -61,7 +61,7 @@ export default function Contact() {
                     <p><span className="text-gold font-medium">021-32776004</span> (Office IQ Builders)</p>
                     <p><span className="text-gold font-medium">0314-1115203</span> (Hasnain - Director)</p>
                     <p><span className="text-gold font-medium">0314-1115203</span> (Ammar - Director of Sales)</p>
-                    <p><span className="text-gold font-medium">021-32776004</span> (Owaisa)</p>
+                    <p><span className="text-gold font-medium">021-32776004</span> (Owais)</p>
                   </div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function Contact() {
                         href="tel:02132776004"
                         className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
                     >
-                      Owaisa - 02132776004
+                      Owais - 02132776004
                     </motion.a>
                 </div>
             )}

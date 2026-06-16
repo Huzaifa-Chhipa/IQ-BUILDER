@@ -40,7 +40,7 @@ export default function ContactUs() {
                     <p><span className="text-gold font-medium">021-32776004</span> (Office IQ Builders)</p>
                     <p><span className="text-gold font-medium">0314-1115203</span> (Hasnain - Director)</p>
                     <p><span className="text-gold font-medium">0314-1115203</span> (Ammar - Director of Sales)</p>
-                    <p><span className="text-gold font-medium">021-32776004</span> (Owaisa)</p>
+                    <p><span className="text-gold font-medium">021-32776004</span> (Owais)</p>
                   </div>
                 </div>
               </div>
