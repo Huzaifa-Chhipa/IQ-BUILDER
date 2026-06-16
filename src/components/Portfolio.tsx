@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { Maximize2, ArrowUpRight } from 'lucide-react';
@@ -16,7 +17,7 @@ const projects = [
     id: 2,
     title: 'Madina Park View',
     image: img2,
-    pdf: '/madina-park-view.pdf',
+    slug: 'madina-park-view',
     gridArea: 'md:col-span-2 md:row-span-2'
   }
 ];
@@ -98,15 +99,24 @@ export default function Portfolio() {
                     <h3 className="text-2xl md:text-3xl font-display font-light text-white mb-6 leading-tight uppercase">{project.title}</h3>
                     
                     <div className="flex items-center gap-4">
-                      <button 
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          window.open(project.pdf, '_blank');
-                        }}
-                        className="flex items-center gap-2 bg-white text-black px-6 py-3 text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-amber transition-colors duration-300"
-                      >
-                        View Details <ArrowUpRight size={14} />
-                      </button>
+                      {project.slug ? (
+                        <Link 
+                            to={`/projects/${project.slug}`}
+                            className="flex items-center gap-2 bg-white text-black px-6 py-3 text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-amber transition-colors duration-300"
+                        >
+                            View Details <ArrowUpRight size={14} />
+                        </Link>
+                      ) : (
+                        <button 
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                window.open(project.pdf, '_blank');
+                            }}
+                            className="flex items-center gap-2 bg-white text-black px-6 py-3 text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-amber transition-colors duration-300"
+                        >
+                            View Details <ArrowUpRight size={14} />
+                        </button>
+                      )}
                     </div>
                   </motion.div>
                 </div>
