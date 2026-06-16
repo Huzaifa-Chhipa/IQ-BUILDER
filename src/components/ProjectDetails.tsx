@@ -34,12 +34,38 @@ export default function ProjectDetails() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-24">
           <motion.h2 className="text-4xl md:text-5xl font-display font-light text-white mb-6 uppercase tracking-widest">IQ SHOPPING MALL & RESIDENCIA</motion.h2>
-          <motion.h2 className="text-6xl md:text-8xl font-light text-amber mb-8 tracking-tighter">COMING SOON</motion.h2>
-          <img src={C1Img} alt="Coming Soon" className="w-full max-w-2xl mx-auto rounded-3xl mb-12 shadow-2xl" />
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">Karachi's Next Landmark Destination. Modern Living. Smart Investment. Premium Business Opportunities.</p>
+          <motion.h2 className="text-6xl md:text-8xl font-light text-amber mb-16 tracking-tighter">COMING SOON</motion.h2>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center text-left">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <img src={C1Img} alt="Coming Soon" className="w-full rounded-3xl shadow-2xl hover:scale-[1.02] transition-transform duration-500" />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-col justify-center"
+            >
+              <h2 className="text-amber text-xs uppercase tracking-[0.3em] font-bold mb-4">About Project</h2>
+              <h3 className="text-4xl md:text-5xl font-display font-light mb-6 leading-tight">Building a Better Tomorrow</h3>
+              <p className="text-lg text-white/70 leading-relaxed mb-6">
+                IQ Builders is a modern residential and commercial development thoughtfully designed to meet the evolving needs of urban living. Located in Prime Saddar, Karachi, the project combines contemporary architecture, quality construction, and premium facilities to create a destination where families can thrive, businesses can grow, and investments can prosper.
+              </p>
+              <p className="text-base text-white/50 border-l border-amber/30 pl-4 italic">
+                Karachi's Next Landmark Destination. Modern Living. Smart Investment. Premium Business Opportunities.
+              </p>
+            </motion.div>
+          </div>
         </div>
 
-        {sections.map((sec, i) => (
+        {sections.slice(1).map((sec, i) => (
           <div key={i} className="mb-24">
             <h2 className="text-amber text-[10px] uppercase tracking-[0.3em] font-bold mb-4">{sec.title}</h2>
             <h3 className="text-4xl md:text-6xl mb-12">{sec.subtitle}</h3>
