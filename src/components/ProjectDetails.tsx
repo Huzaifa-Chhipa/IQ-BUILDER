@@ -34,6 +34,7 @@ export default function ProjectDetails() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-24">
           <motion.h2 className="text-4xl md:text-5xl font-display font-light text-white mb-6 uppercase tracking-widest">IQ SHOPPING MALL & RESIDENCIA</motion.h2>
+          <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => navigate('/projects')} className="mt-4 px-8 py-3 bg-amber text-black rounded-full font-bold hover:bg-amber-light transition-colors duration-300">View Projects</motion.button>
           <motion.h2 className="text-6xl md:text-8xl font-light text-amber mb-16 tracking-tighter">COMING SOON</motion.h2>
           
           <div className="grid md:grid-cols-2 gap-12 items-center text-left">
