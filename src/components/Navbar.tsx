@@ -24,7 +24,6 @@ export default function Navbar() {
     { name: 'Careers', href: '/careers' },
     { name: 'Services', href: '/#services' },
     { name: 'About Us', href: '/about-us' },
-    { name: 'Philosophy', href: '/#about' },
     { name: 'Expertise', href: '/#expertise' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -42,7 +41,7 @@ export default function Navbar() {
         <Link to="/" className="flex items-center gap-2 md:gap-3 group cursor-pointer flex-shrink-0">
           <Logo height={32} variant="icon" />
           <span className="text-[8px] sm:text-xs md:text-sm font-display font-medium tracking-[0.05em] md:tracking-[0.2em] uppercase text-white leading-tight">
-            IQ <br className="sm:hidden" /> BUILDERS & DEVELOPERS
+            IQ BUILDERS & DEVELOPERS
           </span>
         </Link>
 

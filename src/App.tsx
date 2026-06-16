@@ -6,7 +6,7 @@ import Navbar from '@/src/components/Navbar';
 import Hero from '@/src/components/Hero';
 import ProjectDetails from '@/src/components/ProjectDetails';
 import About from '@/src/components/About';
-import Services from '@/src/components/Services';
+// import Services from '@/src/components/Services';
 import Portfolio from '@/src/components/Portfolio';
 import WhyChooseUs from '@/src/components/WhyChooseUs';
 import FAQ from '@/src/components/FAQ';
@@ -29,7 +29,7 @@ function MainLayout() {
         <Hero />
         <ProjectDetails />
         <About />
-        <Services />
+        {/* <Services /> */}
         <WhyChooseUs />
         <FAQ />
       </main>
