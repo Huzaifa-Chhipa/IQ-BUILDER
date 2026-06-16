@@ -83,7 +83,7 @@ export default function Navbar() {
                 <span className="text-gold">02132776004</span>
               </a>
               <a href="https://wa.me/03141115203" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm text-white hover:bg-white/10 flex items-center justify-between">
-                                Hasnain - Director - <span className="text-gold">0314-1115203</span>
+                Hasnain - Director - <span className="text-gold">0314-1115203</span>
               </a>
               <a href="https://wa.me/03141115203" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm text-white hover:bg-white/10 flex items-center justify-between">
                 Ammar - Director of Sales
