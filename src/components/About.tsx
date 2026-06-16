@@ -1,16 +1,16 @@
 import { motion } from 'motion/react';
 import { Quote } from 'lucide-react';
 import blueprintImg from '../assets/images/architect_blueprint_detail_1779209854095.png';
-import architectsAtWorkImg from '../assets/images/architects_at_work_1779209726217.png';
+import c2Img from '../COMMING/c2.jpeg';
 
 export default function About() {
   return (
     <section id="about" className="py-24 md:py-40 bg-navy-deep relative overflow-hidden">
       {/* Decorative Blueprint Background element */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none">
-        <img 
-          src={blueprintImg} 
-          alt="Blueprint" 
+        <img
+          src={blueprintImg}
+          alt="Blueprint"
           className="w-full h-full object-cover grayscale"
           referrerPolicy="no-referrer"
         />
@@ -28,8 +28,8 @@ export default function About() {
               className="relative aspect-square md:aspect-video lg:aspect-square overflow-hidden rounded-[40px]"
             >
               <img
-                src={architectsAtWorkImg}
-                alt="Our Team"
+                src={c2Img}
+                alt="Alexander Sterling"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
