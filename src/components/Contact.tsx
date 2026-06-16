@@ -58,10 +58,10 @@ export default function Contact() {
                 <div>
                   <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Contact Number</h4>
                   <div className="text-white/40 font-light space-y-2 text-sm">
-                    <p><span className="text-gold font-medium">021-32776004</span> (Office IQ Builders)</p>
-                    <p><span className="text-gold font-medium">0314-1115203</span> (Hasnain - Director)</p>
-                    <p><span className="text-gold font-medium">0314-1115203</span> (Ammar - Director of Sales)</p>
-                    <p><span className="text-gold font-medium">021-32776004</span> (Owais)</p>
+                    <p className="whitespace-nowrap"><span className="text-gold font-medium">021-32776004</span> (Office IQ Builders)</p>
+                    <p className="whitespace-nowrap"><span className="text-gold font-medium">0314-1115203</span> (Hasnain - Director)</p>
+                    <p className="whitespace-nowrap"><span className="text-gold font-medium">0314-1115203</span> (Ammar - Director of Sales)</p>
+                    <p className="whitespace-nowrap"><span className="text-gold font-medium">021-32776004</span> (Owais)</p>
                   </div>
                 </div>
               </div>
