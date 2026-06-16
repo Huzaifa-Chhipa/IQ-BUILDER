@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import C1Img from '../assets/coming/c1.jpeg';
-
+import madinaParkViewContent from "../assets/Madina Park View/madina_park_view_content.md";
 const sections = [
   {
     title: "About Project",
@@ -33,10 +33,41 @@ export default function ProjectDetails() {
     <section className="bg-charcoal text-white py-24">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-display font-light uppercase text-amber mb-4">
+              The IQ Builders Philosophy
+            </h2>
+            <p className="text-lg text-white/70 mb-6">
+              Crafting Timeless Grandeur Since 2000. At IQ Builders & Developers, we believe that true luxury is found in the intersection of innovation and precision. Our journey began with a single vision: to redefine the global skyline with buildings that are as sustainable as they are breathtaking.
+            </p>
+            <p className="text-lg text-white/70 mb-8">
+              Sustainable Core: Integrating green technology into every luxury blueprint.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-6 bg-white/5 border border-white/10 rounded-xl text-center">
+                <h3 className="text-xl font-bold text-amber mb-3">Marketing Projects</h3>
+                <p className="text-white/60 mb-4">Explore our marketing initiatives and showcase.</p>
+                <button onClick={() => navigate('/projects')} className="px-4 py-2 bg-amber text-black rounded-full font-medium hover:bg-amber-light transition">
+                  View Projects
+                </button>
+              </div>
+              <div className="p-6 bg-white/5 border border-white/10 rounded-xl text-center">
+                <h3 className="text-xl font-bold text-amber mb-3">Development Projects</h3>
+                <p className="text-white/60 mb-4">Discover our latest development works.</p>
+                <button onClick={() => navigate('/projects')} className="px-4 py-2 bg-amber text-black rounded-full font-medium hover:bg-amber-light transition">
+                  View Projects
+                </button>
+              </div>
+            </div>
+          </motion.div>
           <motion.h2 className="text-4xl md:text-5xl font-display font-light text-white mb-6 uppercase tracking-widest">IQ SHOPPING MALL & RESIDENCIA</motion.h2>
-          <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => navigate('/projects')} className="mt-4 px-8 py-3 bg-amber text-black rounded-full font-bold hover:bg-amber-light transition-colors duration-300">View Projects</motion.button>
           <motion.h2 className="text-6xl md:text-8xl font-light text-amber mb-16 tracking-tighter">COMING SOON</motion.h2>
-          
+
           <div className="grid md:grid-cols-2 gap-12 items-center text-left">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -46,7 +77,7 @@ export default function ProjectDetails() {
             >
               <img src={C1Img} alt="Coming Soon" className="w-full rounded-3xl shadow-2xl hover:scale-[1.02] transition-transform duration-500" />
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}

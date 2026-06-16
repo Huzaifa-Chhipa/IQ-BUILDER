@@ -2,6 +2,10 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, Building2, MapPin, ShieldCheck, Zap, ParkingSquare, Users, BookOpenText, Dumbbell, Gamepad2 } from 'lucide-react';
 import Footer from '@/src/components/Footer';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import markdownContent from "../assets/Madina Park View/madina_park_view_content.md?raw";
+
 
 const projectData: Record<string, any> = {
     'madina-park-view': {
@@ -40,8 +44,8 @@ const projectData: Record<string, any> = {
 };
 
 export default function ProjectDetailsPage() {
-    const { projectId } = useParams();
-    const project = projectId ? projectData[projectId] : null;
+    // Fixed project key for Madina Park View
+const project = projectData['madina-park-view'];
 
     if (!project) return <div className="text-white p-20 text-center">Project not found</div>;
 
@@ -56,14 +60,10 @@ export default function ProjectDetailsPage() {
                 <motion.h3 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-xl text-amber mb-8 italic">{project.subtitle}</motion.h3>
 
                 <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-white/70 text-lg mb-12 max-w-3xl leading-relaxed">{project.description}</motion.p>
+                
+
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <section>
-                        <h2 className="text-2xl font-display mb-6 flex items-center gap-3"><Users className="text-amber" /> Joint Venture</h2>
-                        <ul className="list-disc list-inside text-white/70 space-y-2">
-                            {project.jointVenture.map((jv: string, i: number) => <li key={i}>{jv}</li>)}
-                        </ul>
-                    </section>
                     <section>
                         <h2 className="text-2xl font-display mb-6 flex items-center gap-3"><MapPin className="text-amber" /> Prime Location</h2>
                         <p className="text-white/70 mb-4">{project.location.address}</p>
@@ -71,15 +71,25 @@ export default function ProjectDetailsPage() {
                             {project.location.highlights.map((h: string, i: number) => <li key={i}>{h}</li>)}
                         </ul>
                     </section>
+                    <section>
+                        <h2 className="text-2xl font-display mb-6">Joint Venture Partners</h2>
+                        <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                            <ul className="list-none space-y-3">
+                                {project.jointVenture.map((partner: string, i: number) => (
+                                    <li key={i} className="flex items-center gap-3 text-white/80"><Building2 size={18} className="text-amber" /> {partner}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </section>
                 </div>
 
                 <section className="mt-16">
-                    <h2 className="text-2xl font-display mb-8">Premium Amenities</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <h2 className="text-2xl font-display mb-8">Amenities</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                         {project.amenities.map((amenity: any, i: number) => (
-                            <div key={i} className="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
-                                <amenity.icon className="text-amber" size={24} />
-                                <span>{amenity.name}</span>
+                            <div key={i} className="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                                <amenity.icon className="text-amber shrink-0" />
+                                <span className="text-sm font-medium">{amenity.name}</span>
                             </div>
                         ))}
                     </div>
@@ -105,8 +115,8 @@ export default function ProjectDetailsPage() {
                         ))}
                     </div>
                 </section>
-            </div>
-            <Footer />
-        </div>
+            </div >
+        <Footer />
+        </div >
     );
 }

@@ -1,21 +1,4 @@
-# Madina Park View Apartments
-### *Experience Luxury, Comfort, and Modern Living*
 
-**Madina Park View** ek premium aur luxury apartment project hai jo modern lifestyle aur aaliyan sahulyat ka ek behtareen imtizaj (blend) pesh karta hai. Yeh project Karachi ke ek behtareen aur markazi location par khubsoorat manzazir aur pur-sukoon mahool ke sath design kiya gaya hai.
-
----
-
-## 🏢 Project Overview & Joint Venture
-Yeh luxury project real estate aur construction industry ke mashhoor aur mutamad builders ka ek **Joint Venture (JV)** hai:
-* **I.B Builders & Developers**
-* **Jumani Builders & Developers**
-* **Rida Builders & Developers**
-
----
-
-## 📍 Prime Location
-* **Address:** Plot No. 716/2, Near Parda Park, Jamshed Road, Karachi.
-* **Key Advantages:** * 🏞️ **Park Facing:** Khubsoorat aur haryali se bharpur view.
   * 🌬️ **West Open Flats:** Taaza hawa aur behtareen roshni (cross ventilation) ka mukammal intezam.
 
 ---
@@ -99,4 +82,4 @@ Project ke 4th floor ko mukammal taur par lifestyle aur recreational activities 
 * **Mobile Numbers:** * 📱 0314-2553052
   * 📱 0336-2890901
 * **UAN:** ☎️ 111-586-264
-* **Rida Developers Contact:** 📞 0300-011(RIDA)
+
