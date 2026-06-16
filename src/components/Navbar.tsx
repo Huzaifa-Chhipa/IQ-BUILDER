@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/src/lib/utils';
 import Logo from './Logo';
+import { ChevronDown } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [salesDropdownOpen, setSalesDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,12 +67,33 @@ export default function Navbar() {
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="hidden md:flex items-center gap-4"
+          className="relative hidden md:inline-block"
         >
-          <a href="https://wa.me/923322982846" target="_blank" rel="noopener noreferrer" className="bg-amber text-black px-6 py-2 rounded-full text-[10px] uppercase tracking-widest font-bold hover:bg-amber-light transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
-            Book Consultation
-          </a>
+          <button onClick={() => setSalesDropdownOpen(!salesDropdownOpen)} className="bg-amber text-black px-6 py-2 rounded-full text-[10px] uppercase tracking-widest font-bold hover:bg-amber-light transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.2)] flex items-center gap-2">
+            Contact Sales Team
+            <ChevronDown className={`w-4 h-4 transition-transform ${salesDropdownOpen ? 'rotate-180' : ''}`} />
+          </button>
+          {salesDropdownOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="absolute right-0 mt-2 w-64 bg-black/90 backdrop-blur-xl rounded-md border border-white/20 shadow-lg z-20 flex flex-col"
+            >
+              <a href="https://wa.me/02132776004" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm text-white hover:bg-white/10 flex items-center justify-between">
+                Office IQ Builders
+                <span className="text-gold">02132776004</span>
+              </a>
+              <a href="https://wa.me/03141115203" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm text-white hover:bg-white/10 flex items-center justify-between">
+                                Hasnain - Director - <span className="text-gold">0314-1115203</span>
+              </a>
+              <a href="https://wa.me/03141115203" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm text-white hover:bg-white/10 flex items-center justify-between">
+                Ammar - Director of Sales
+                <span className="text-gold">0314-1115203</span>
+              </a>
+            </motion.div>
+          )}
         </motion.div>
+
 
         {/* Mobile Toggle */}
         <div className="md:hidden">

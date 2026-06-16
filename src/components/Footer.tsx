@@ -60,7 +60,7 @@ export default function Footer() {
             <p className="text-white/40 text-sm leading-relaxed max-w-sm mb-10">
               Architecting the silhouettes of tomorrow's skyline with unparalleled precision and timeless luxury. A legacy built across 10+ nations.
             </p>
-            
+
             {/* Contact Details */}
             <div className="text-white/40 text-xs space-y-6 mb-10">
               <div>
@@ -74,12 +74,12 @@ export default function Footer() {
                   <p><span className="text-gold font-medium">021-32776004</span> (Office)</p>
                   <p><span className="text-gold font-medium">0314-1115203</span> (Hasnain)</p>
                   <p><span className="text-gold font-medium">0314-1115203</span> (Ammar)</p>
-                  <p><span className="text-gold font-medium">021-32776004</span> (Owais)</p>
+
                 </div>
               </div>
               <div>
                 <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Projects Email</h4>
-                <p>hasnainqadriiqbuilders@gmail.com <br/> (Encrypted Channel)</p>
+                <p>hasnainqadriiqbuilders@gmail.com <br /> (Encrypted Channel)</p>
               </div>
             </div>
 
@@ -101,7 +101,7 @@ export default function Footer() {
                 {group.items.map((item, j) => (
                   <li key={j}>
                     {group.title === 'Legal' || (group.title === 'Company' && (item === 'History' || item === 'Sustainability')) ? (
-                      <button 
+                      <button
                         onClick={() => setModalData({ isOpen: true, title: item, content: footerModals[item as keyof typeof footerModals] })}
                         className="text-white/40 hover:text-gold transition-colors text-sm font-light flex items-center gap-2 group"
                       >
@@ -134,13 +134,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      
+
       {modalData && (
-        <PolicyModal 
-          isOpen={modalData.isOpen} 
-          onClose={() => setModalData(null)} 
-          title={modalData.title} 
-          content={modalData.content} 
+        <PolicyModal
+          isOpen={modalData.isOpen}
+          onClose={() => setModalData(null)}
+          title={modalData.title}
+          content={modalData.content}
         />
       )}
     </footer>

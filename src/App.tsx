@@ -13,6 +13,7 @@ import FAQ from '@/src/components/FAQ';
 import Contact from '@/src/components/Contact';
 import Footer from '@/src/components/Footer';
 import Logo from '@/src/components/Logo';
+import WhatsAppFloat from '@/src/components/WhatsAppFloat';
 import { useSmoothScroll } from '@/src/hooks/useSmoothScroll';
 import AboutUs from './pages/AboutUs';
 import ProjectsPage from './pages/Projects';
@@ -76,6 +77,7 @@ export default function App() {
 
        {/* Cursor Follower (Subtle) */}
        <CursorFollower />
+        <WhatsAppFloat />
     </div>
   );
 }
