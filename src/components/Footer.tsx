@@ -79,11 +79,12 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-6">
-              {[Facebook, Instagram].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold transition-all">
-                  <Icon size={18} />
-                </a>
-              ))}
+              <a href="https://www.facebook.com/share/1EU93KPe9x/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold transition-all">
+                <Facebook size={18} />
+              </a>
+              <a href="https://www.instagram.com/iq_group_of_companies_offical?igsh=MTVkN3VmMjh2eHRlMw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold transition-all">
+                <Instagram size={18} />
+              </a>
             </div>
           </div>
 
