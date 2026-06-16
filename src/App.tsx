@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTop from '@/src/components/ScrollToTop';
 import Navbar from '@/src/components/Navbar';
@@ -36,101 +36,34 @@ function MainLayout() {
 }
 
 export default function App() {
-  const [loading, setLoading] = useState(!sessionStorage.getItem('hasShownLoader'));
-  const [progress, setProgress] = useState(0);
-
   // Initialize smooth scroll
   useSmoothScroll();
 
-  useEffect(() => {
-    if (!loading) return;
-
-    const timer = setInterval(() => {
-      setProgress((oldProgress) => {
-        if (oldProgress >= 100) {
-          clearInterval(timer);
-          sessionStorage.setItem('hasShownLoader', 'true');
-          setTimeout(() => setLoading(false), 500);
-          return 100;
-        }
-        const diff = Math.random() * 20;
-        return Math.min(oldProgress + diff, 100);
-      });
-    }, 150);
-
-    return () => clearInterval(timer);
-  }, [loading]);
-
   return (
     <div className="relative bg-charcoal min-h-screen selection:bg-gold selection:text-black">
-      <AnimatePresence>
-        {loading && (
-          /* ... existing loading code ... */
-          <motion.div
-            key="loader"
-            exit={{ opacity: 0, scale: 1.1 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center p-6"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="flex flex-col items-center gap-6 mb-12"
-            >
-              <Logo height={120} variant="icon" />
-              <h1 className="text-3xl md:text-5xl font-display font-light tracking-widest text-white uppercase text-center">
-                IQ BUILDERS & <span className="text-amber">DEVELOPERS</span>
-              </h1>
-            </motion.div>
-            
-            <div className="w-full max-w-md h-[1px] bg-white/10 relative">
-              <motion.div 
-                initial={{ width: 0 }}
-                animate={{ width: `${progress}%` }}
-                className="absolute top-0 left-0 h-full bg-amber shadow-[0_0_15px_rgba(245,158,11,0.8)]"
-              />
-              <div className="absolute top-4 left-0 w-full flex justify-between text-[10px] uppercase font-bold tracking-[0.5em] text-white/30">
-                <span>Initializing Legacy</span>
-                <span className="text-amber">{Math.round(progress)}%</span>
-              </div>
-            </div>
-            
-            <motion.p
-               animate={{ opacity: [0.3, 0.6, 0.3] }}
-               transition={{ duration: 2, repeat: Infinity }}
-               className="mt-16 text-[10px] uppercase tracking-[0.8em] font-bold text-white/20"
-            >
-              Crafting Excellence
-            </motion.p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="relative"
+      >
+        {/* Background Atmosphere */}
+        <div className="fixed inset-0 pointer-events-none opacity-40 z-0">
+          <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-amber/10 blur-[120px] rounded-full"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 blur-[120px] rounded-full"></div>
+        </div>
 
-      {!loading && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          className="relative"
-        >
-          {/* Background Atmosphere */}
-          <div className="fixed inset-0 pointer-events-none opacity-40 z-0">
-            <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-amber/10 blur-[120px] rounded-full"></div>
-            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 blur-[120px] rounded-full"></div>
-          </div>
-
-          <BrowserRouter>
-            <ScrollToTop />
-            <Routes>
-              <Route path="/" element={<MainLayout />} />
-              <Route path="/about-us" element={<AboutUs />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/contact" element={<ContactUs />} />
-            </Routes>
-          </BrowserRouter>
-        </motion.div>
-      )}
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<MainLayout />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/contact" element={<ContactUs />} />
+          </Routes>
+        </BrowserRouter>
+      </motion.div>
 
       {/* Global Grainy Effect */}
       <div className="fixed inset-0 pointer-events-none z-[90] opacity-[0.03] mix-blend-overlay">
@@ -142,6 +75,7 @@ export default function App() {
     </div>
   );
 }
+
 
 function CursorFollower() {
     const [position, setPosition] = useState({ x: 0, y: 0 });

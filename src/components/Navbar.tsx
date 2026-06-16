@@ -37,10 +37,10 @@ export default function Navbar() {
     >
       <div className="w-full flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group cursor-pointer">
-          <Logo height={38} variant="icon" />
-          <span className="text-xs md:text-sm font-display font-medium tracking-[0.2em] uppercase text-white">
-            IQ <span className="text-amber">BUILDERS & DEVELOPERS</span>
+        <Link to="/" className="flex items-center gap-2 md:gap-3 group cursor-pointer flex-shrink-0">
+          <Logo height={32} variant="icon" />
+          <span className="text-[8px] sm:text-xs md:text-sm font-display font-medium tracking-[0.05em] md:tracking-[0.2em] uppercase text-white leading-tight">
+            IQ <br className="sm:hidden" /> BUILDERS & DEVELOPERS
           </span>
         </Link>
 
