@@ -22,7 +22,6 @@ export default function Hero() {
   // Preload all 94 images
   useEffect(() => {
     const totalFrames = 94;
-    let loadedCount = 0;
     const loadedImages: HTMLImageElement[] = [];
 
     for (let i = 1; i <= totalFrames; i++) {
@@ -30,19 +29,10 @@ export default function Hero() {
       const frameNum = String(i).padStart(3, '0');
       img.src = `/Logo animation/ezgif-frame-${frameNum}.png`;
       img.onload = () => {
-        loadedCount++;
-        setLoadingProgress(Math.round((loadedCount / totalFrames) * 100));
-        if (loadedCount === totalFrames) {
-          setIsLoaded(true);
-        }
+        drawFrame(scrollYProgress.get());
       };
       img.onerror = () => {
-        // Fallback for load errors
-        loadedCount++;
-        setLoadingProgress(Math.round((loadedCount / totalFrames) * 100));
-        if (loadedCount === totalFrames) {
-          setIsLoaded(true);
-        }
+        drawFrame(scrollYProgress.get());
       };
       loadedImages.push(img);
     }
@@ -115,13 +105,11 @@ export default function Hero() {
 
     window.addEventListener('resize', handleResize);
     
-    // Draw initial frame once images are loaded or resize is triggered
-    if (isLoaded) {
-      handleResize();
-    }
+    // Draw initial frame
+    handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
-  }, [isLoaded, images]);
+  }, [images]);
 
   // Redraw when scroll progress updates
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -129,42 +117,26 @@ export default function Hero() {
   });
 
   return (
-    <div ref={containerRef} className="relative h-[200vh] md:h-[300vh] w-full bg-black">
+    <div ref={containerRef} className="relative h-[300vh] md:h-[500vh] w-full bg-black">
       {/* Sticky Canvas Container */}
       <div className="sticky top-0 h-[100dvh] w-full overflow-hidden flex items-center justify-center bg-black z-10">
-        {!isLoaded ? (
-          // Premium Minimalist Loader
-          <div className="flex flex-col items-center justify-center gap-4 text-white z-20">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-              className="w-12 h-12 border-2 border-gold/20 border-t-gold rounded-full"
-            />
-            <span className="font-display text-sm tracking-[0.3em] text-gold/80 uppercase">
-              Loading {loadingProgress}%
-            </span>
-          </div>
-        ) : (
-          <motion.div
-            style={{ opacity: canvasOpacity, scale: canvasScale }}
-            className="w-full h-full flex items-center justify-center"
-          >
-            <canvas ref={canvasRef} className="block pointer-events-none" />
-          </motion.div>
-        )}
+        <motion.div
+          style={{ opacity: canvasOpacity, scale: canvasScale }}
+          className="w-full h-full flex items-center justify-center"
+        >
+          <canvas ref={canvasRef} className="block pointer-events-none" />
+        </motion.div>
 
         {/* Scroll Indicator */}
-        {isLoaded && (
-          <motion.div
-            style={{ opacity: scrollIndicatorOpacity }}
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
-          >
-            <span className="text-[8px] uppercase tracking-[0.5em] text-white">Scroll to Animate</span>
-            <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent" />
-          </motion.div>
-        )}
+        <motion.div
+          style={{ opacity: scrollIndicatorOpacity }}
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+        >
+          <span className="text-[8px] uppercase tracking-[0.5em] text-white">Scroll to Animate</span>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent" />
+        </motion.div>
       </div>
     </div>
   );
