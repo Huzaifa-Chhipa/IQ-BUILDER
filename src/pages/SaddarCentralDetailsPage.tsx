@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, Building2, MapPin, ShieldCheck, Zap, Parking, Coffee, Dumbbell, Users } from 'lucide-react';
+import { ArrowLeft, Building2, MapPin, ShieldCheck, Zap, ParkingSquare, Coffee, Dumbbell, Users } from 'lucide-react';
 import Footer from '@/src/components/Footer';
 
 const projectData: Record<string, any> = {
@@ -18,7 +18,7 @@ const projectData: Record<string, any> = {
             { name: '24/7 Security & CCTV', icon: ShieldCheck },
             { name: 'High-Speed Lifts', icon: Zap },
             { name: 'Standby Generator', icon: Zap },
-            { name: 'Dedicated Car Parking', icon: Parking },
+            { name: 'Dedicated Car Parking', icon: ParkingSquare },
             { name: 'Community Hall', icon: Users },
             { name: 'In-House Masjid', icon: Coffee },
             { name: 'Modern Gym', icon: Dumbbell }
