@@ -57,10 +57,15 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Contact Number</h4>
-                  <p className="text-white/40 font-light">0332-2982846 <br /> 0314-1115203</p>
+                  <div className="text-white/40 font-light space-y-2 text-sm">
+                    <p><span className="text-gold font-medium">021-32776004</span> (Office IQ Builders)</p>
+                    <p><span className="text-gold font-medium">0314-1115203</span> (Hasnain - Director)</p>
+                    <p><span className="text-gold font-medium">0314-1115203</span> (Ammar - Director of Sales)</p>
+                    <p><span className="text-gold font-medium">021-32776004</span> (Owaisa)</p>
+                  </div>
                 </div>
               </div>
-
+ 
               <div className="flex items-start gap-8">
                 <div className="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center text-gold">
                   <Mail size={24} />
@@ -73,27 +78,41 @@ export default function Contact() {
             </div>
         </div>
       </div>
-
+ 
       {/* Floating WhatsApp Menu */}
-      <div className="fixed bottom-10 right-10 z-50 flex flex-col items-center gap-4">
+      <div className="fixed bottom-10 right-10 z-50 flex flex-col items-end gap-3">
         <AnimatePresence>
             {isMenuOpen && (
-                <>
+                <div className="flex flex-col items-end gap-2 mb-2">
                     <motion.a 
                         initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                        href="https://wa.me/923322982846" target="_blank" rel="noopener noreferrer"
-                        className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg"
+                        href="https://wa.me/923141115203" target="_blank" rel="noopener noreferrer"
+                        className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
                     >
-                        03322982846
+                      Hasnain (Director) - 03141115203
                     </motion.a>
                     <motion.a 
                         initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
                         href="https://wa.me/923141115203" target="_blank" rel="noopener noreferrer"
-                        className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg"
+                        className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
                     >
-                        03141115203
+                      Ammar (Sales Director) - 03141115203
                     </motion.a>
-                </>
+                    <motion.a 
+                        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
+                        href="tel:02132776004"
+                        className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
+                    >
+                      Office IQ Builders - 02132776004
+                    </motion.a>
+                    <motion.a 
+                        initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
+                        href="tel:02132776004"
+                        className="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg hover:bg-gold/90 transition-all flex items-center gap-2"
+                    >
+                      Owaisa - 02132776004
+                    </motion.a>
+                </div>
             )}
         </AnimatePresence>
         <motion.button 

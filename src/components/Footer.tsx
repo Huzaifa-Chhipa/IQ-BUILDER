@@ -70,7 +70,12 @@ export default function Footer() {
               </div>
               <div>
                 <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Contact Num</h4>
-                <p>0332-2982846 <br/> 0314-1115203</p>
+                <div className="space-y-1">
+                  <p><span className="text-gold font-medium">021-32776004</span> (Office)</p>
+                  <p><span className="text-gold font-medium">0314-1115203</span> (Hasnain)</p>
+                  <p><span className="text-gold font-medium">0314-1115203</span> (Ammar)</p>
+                  <p><span className="text-gold font-medium">021-32776004</span> (Owaisa)</p>
+                </div>
               </div>
               <div>
                 <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Projects Email</h4>

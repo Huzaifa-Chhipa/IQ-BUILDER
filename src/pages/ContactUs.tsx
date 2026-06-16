@@ -36,7 +36,12 @@ export default function ContactUs() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-2">Contact Num</h4>
-                  <p className="text-white/60 font-light break-all">0332-2982846 <br /> 0314-1115203</p>
+                  <div className="text-white/60 font-light space-y-2 text-sm break-all">
+                    <p><span className="text-gold font-medium">021-32776004</span> (Office IQ Builders)</p>
+                    <p><span className="text-gold font-medium">0314-1115203</span> (Hasnain - Director)</p>
+                    <p><span className="text-gold font-medium">0314-1115203</span> (Ammar - Director of Sales)</p>
+                    <p><span className="text-gold font-medium">021-32776004</span> (Owaisa)</p>
+                  </div>
                 </div>
               </div>
 
