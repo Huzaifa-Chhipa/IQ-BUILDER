@@ -74,9 +74,9 @@ export default function Hero() {
       // Draw image in contain mode to avoid cropping the logo (100% scale)
       let scale = Math.min(width / img.width, height / img.height);
       
-      // On mobile screens, scale the logo to occupy 95% of the screen width so it is perfectly readable and prominent
+      // On mobile screens, use cover mode (Math.max) so the animation fills the entire screen
       if (width < 768) {
-        scale = (width * 0.95) / img.width;
+        scale = Math.max(width / img.width, height / img.height);
       }
 
       const w = img.width * scale;
