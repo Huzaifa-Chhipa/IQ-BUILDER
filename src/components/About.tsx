@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Quote } from 'lucide-react';
 import blueprintImg from '../assets/images/architect_blueprint_detail_1779209854095.png';
-import c2Img from '../coming/c2.jpeg';
+import c2Img from '../assets/coming/c2.jpeg';
 
 export default function About() {
   return (

@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ShieldCheck, HardHat, Clock, Award, Users, Zap } from 'lucide-react';
-import c3Img from '../coming/c3.jpeg';
+import c3Img from '../assets/coming/c3.jpeg';
 
 const features = [
   {

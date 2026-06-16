@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
-import C1Img from '../coming/C1.jpeg';
+import C1Img from '../assets/coming/C1.jpeg';
 
 const sections = [
   {
