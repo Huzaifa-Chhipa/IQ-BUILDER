@@ -33,6 +33,7 @@ export default function ProjectDetails() {
     <section className="bg-charcoal text-white py-24">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-24">
+          <motion.h2 className="text-4xl md:text-5xl font-display font-light text-white mb-6 uppercase tracking-widest">IQ SHOPPING MALL & RESIDENCIA</motion.h2>
           <motion.h2 className="text-6xl md:text-8xl font-light text-amber mb-8 tracking-tighter">COMING SOON</motion.h2>
           <img src={C1Img} alt="Coming Soon" className="w-full max-w-2xl mx-auto rounded-3xl mb-12 shadow-2xl" />
           <p className="text-xl text-white/70 max-w-2xl mx-auto">Karachi's Next Landmark Destination. Modern Living. Smart Investment. Premium Business Opportunities.</p>
