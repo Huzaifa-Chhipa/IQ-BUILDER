@@ -1,100 +1,109 @@
 import { motion, useScroll, useTransform, useMotionValueEvent } from 'motion/react';
 import { useRef, useEffect, useState } from 'react';
 
+const TOTAL_FRAMES = 94;
+
+// Build image path — folder name with space is URL-encoded safely
+function framePath(i: number): string {
+  const frameNum = String(i + 1).padStart(3, '0');
+  return `/Logo%20animation/ezgif-frame-${frameNum}.png`;
+}
+
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  
+
   const [images, setImages] = useState<HTMLImageElement[]>([]);
-  const [loadingProgress, setLoadingProgress] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [ready, setReady] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ['start start', 'end end'],
   });
 
-  // Fade out and scale down the canvas as we approach the end of the scroll container
+  /* ---------- Scroll-based transforms ---------- */
   const canvasOpacity = useTransform(scrollYProgress, [0.85, 0.95], [1, 0]);
   const canvasScale = useTransform(scrollYProgress, [0.85, 0.98], [1, 0.95]);
   const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.15], [0.6, 0]);
 
-  // Preload all 94 images
+  /* ---------- Preload images ---------- */
   useEffect(() => {
-    const totalFrames = 94;
-    const loadedImages: HTMLImageElement[] = [];
+    const loaded: HTMLImageElement[] = [];
+    let count = 0;
 
-    for (let i = 1; i <= totalFrames; i++) {
+    for (let i = 0; i < TOTAL_FRAMES; i++) {
       const img = new Image();
-      const frameNum = String(i).padStart(3, '0');
-      img.src = `/Logo animation/ezgif-frame-${frameNum}.png`;
+      img.src = framePath(i);
       img.onload = () => {
-        drawFrame(scrollYProgress.get());
+        count++;
+        if (count >= TOTAL_FRAMES) {
+          setImages(loaded);
+          setReady(true);
+        }
       };
       img.onerror = () => {
-        drawFrame(scrollYProgress.get());
+        // If one fails still try to continue
+        count++;
+        if (count >= TOTAL_FRAMES) {
+          setImages(loaded);
+          setReady(true);
+        }
       };
-      loadedImages.push(img);
+      loaded.push(img);
     }
-    setImages(loadedImages);
   }, []);
 
+  /* ---------- Draw a single frame ---------- */
   const drawFrame = (progress: number) => {
     const canvas = canvasRef.current;
     if (!canvas || images.length === 0) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Enable high-quality image smoothing for sharper scaling
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = 'high';
 
-    const totalFrames = images.length;
-    // Map progress [0, 0.9] to frames so it reaches the final frame slightly before the absolute end
-    const animationProgress = Math.min(1, progress / 0.9);
+    const animProgress = Math.min(1, progress / 0.9);
     const frameIndex = Math.min(
-      totalFrames - 1,
-      Math.max(0, Math.floor(animationProgress * (totalFrames - 1)))
+      TOTAL_FRAMES - 1,
+      Math.max(0, Math.floor(animProgress * (TOTAL_FRAMES - 1))),
     );
 
     const img = images[frameIndex];
-    if (img && img.complete) {
-      const dpr = window.devicePixelRatio || 1;
-      const width = canvas.width / dpr;
-      const height = canvas.height / dpr;
-      
-      ctx.clearRect(0, 0, width, height);
+    if (!img || !img.complete) return;
 
-      // Use cover mode on desktop to fill the screen, contain mode on mobile
-      const scale = width >= 768
-        ? Math.max(width / img.width, height / img.height)
-        : Math.min(width / img.width, height / img.height);
+    const dpr = window.devicePixelRatio || 1;
+    const w = canvas.width / dpr;
+    const h = canvas.height / dpr;
 
-      const w = img.width * scale;
-      const h = img.height * scale;
-      const x = (width - w) / 2;
-      const y = (height - h) / 2;
+    ctx.clearRect(0, 0, w, h);
 
-      ctx.drawImage(img, x, y, w, h);
-    }
+    // Always use cover — fills the screen on both mobile & desktop
+    const scale = Math.max(w / img.width, h / img.height);
+    const dw = img.width * scale;
+    const dh = img.height * scale;
+    const dx = (w - dw) / 2;
+    const dy = (h - dh) / 2;
+
+    ctx.drawImage(img, dx, dy, dw, dh);
   };
 
-  // Handle canvas resize
+  /* ---------- Resize handler ---------- */
   useEffect(() => {
     const handleResize = () => {
       const canvas = canvasRef.current;
       if (!canvas) return;
-      
+
       const parent = canvas.parentElement;
       const width = parent?.clientWidth || window.innerWidth;
       const height = parent?.clientHeight || window.innerHeight;
-      
+
       const dpr = window.devicePixelRatio || 1;
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
-      
+
       const ctx = canvas.getContext('2d');
       if (ctx) {
         ctx.resetTransform();
@@ -102,22 +111,35 @@ export default function Hero() {
         ctx.imageSmoothingEnabled = true;
         ctx.imageSmoothingQuality = 'high';
       }
-      
-      drawFrame(scrollYProgress.get());
+
+      requestAnimationFrame(() => drawFrame(scrollYProgress.get()));
     };
 
-    window.addEventListener('resize', handleResize);
-    
-    // Draw initial frame
     handleResize();
-
+    window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [images]);
 
-  // Redraw when scroll progress updates
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  /* ---------- Redraw on scroll ---------- */
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     drawFrame(latest);
   });
+
+  /* ---------- Loading fallback ---------- */
+  if (!ready) {
+    return (
+      <div ref={containerRef} className="relative h-[300vh] md:h-[500vh] w-full bg-black">
+        <div className="sticky top-0 h-[100dvh] w-full overflow-hidden flex items-center justify-center bg-black z-10">
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-10 h-10 border-2 border-amber/30 border-t-amber rounded-full animate-spin" />
+            <span className="text-white/30 text-[10px] uppercase tracking-[0.3em] font-light">
+              Loading experience…
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div ref={containerRef} className="relative h-[300vh] md:h-[500vh] w-full bg-black">
@@ -127,7 +149,7 @@ export default function Hero() {
           style={{ opacity: canvasOpacity, scale: canvasScale }}
           className="w-full h-full flex items-center justify-center"
         >
-          <canvas ref={canvasRef} className="block pointer-events-none" />
+          <canvas ref={canvasRef} className="block pointer-events-none w-full h-full" />
         </motion.div>
 
         {/* Scroll Indicator */}
@@ -138,10 +160,9 @@ export default function Hero() {
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
         >
           <span className="text-[8px] uppercase tracking-[0.5em] text-white">Scroll to Animate</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent" />
+          <div className="w-[1px] h-12 bg-gradient-to-b from-amber to-transparent" />
         </motion.div>
       </div>
     </div>
   );
 }
-
