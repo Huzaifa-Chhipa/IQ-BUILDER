@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, Building2, MapPin, ShieldCheck, Zap, ParkingSquare, Users, BookOpenText, Dumbbell, Gamepad2 } from 'lucide-react';
 import Footer from '@/src/components/Footer';
+import SEO from '@/src/components/SEO';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import markdownContent from "../assets/Madina Park View/madina_park_view_content.md?raw";
@@ -51,6 +52,13 @@ const project = projectData['madina-park-view'];
 
     return (
         <div className="bg-obsidian text-white">
+            <SEO
+                title="Madina Park View | Luxury Apartments in Karachi"
+                description="Madina Park View – premium luxury apartments in Karachi near Parda Park, Jamshed Road. 3-bedroom apartments with modern amenities, community hall, gym, and prime location."
+                keywords="Madina Park View, luxury apartments Karachi, 3 bedroom flats Karachi, apartments near Parda Park, Jamshed Road property"
+                ogUrl="https://iqbuildersdevelopers.com/projects/madina-park-view"
+                canonical="https://iqbuildersdevelopers.com/projects/madina-park-view"
+            />
             <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
                 <Link to="/projects" className="flex items-center gap-2 text-amber mb-8 hover:underline">
                     <ArrowLeft size={20} /> Back to Projects

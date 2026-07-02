@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, Building2, MapPin, ShieldCheck, Zap, ParkingSquare, Coffee, Dumbbell, Users } from 'lucide-react';
 import Footer from '@/src/components/Footer';
+import SEO from '@/src/components/SEO';
 
 const projectData: Record<string, any> = {
     'saddar-central': {
@@ -37,6 +38,13 @@ export default function SaddarCentralDetailsPage() {
 
     return (
         <div className="bg-charcoal text-white">
+            <SEO
+                title="Saddar Central Point | Commercial & Residential in Saddar Karachi"
+                description="Saddar Central Point – premium mixed-use commercial shopping mall and luxury apartments in Saddar, Karachi near Empress Market. Prime location retail spaces and residences."
+                keywords="Saddar Central Point, commercial property Saddar Karachi, shops in Saddar, mixed-use building Karachi, Empress Market property"
+                ogUrl="https://iqbuildersdevelopers.com/projects/saddar-central"
+                canonical="https://iqbuildersdevelopers.com/projects/saddar-central"
+            />
             <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
                 <Link to="/projects" className="flex items-center gap-2 text-amber mb-8 hover:underline">
                     <ArrowLeft size={20} /> Back to Projects

@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
+import { Phone, ArrowUpRight } from 'lucide-react';
 import C1Img from '../assets/coming/c1.jpeg';
 import madinaParkViewContent from "../assets/Madina Park View/madina_park_view_content.md";
 const sections = [
@@ -65,6 +66,98 @@ export default function ProjectDetails() {
               </div>
             </div>
           </motion.div>
+
+          {/* Contact Section — before Coming Soon */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-24"
+          >
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-amber text-[10px] uppercase tracking-[0.3em] font-bold mb-4 block">
+                  Get In Touch
+                </span>
+                <h3 className="text-3xl md:text-4xl font-display font-light text-white mb-4">
+                  Contact Our <span className="text-amber">Sales Team</span>
+                </h3>
+                <p className="text-white/50 text-sm font-light">
+                  Reach out to us for bookings, inquiries, and more information
+                </p>
+              </div>
+
+              <div className="space-y-4 text-left">
+                {/* Main Contact — Husnain */}
+                <div className="p-6 md:p-8 border border-amber/20 rounded-[32px] bg-gradient-to-r from-amber/10 via-amber/5 to-transparent">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-amber/20 border border-amber/30 flex items-center justify-center text-amber text-xl font-bold">
+                        H
+                      </div>
+                      <div>
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold">Main Contact</span>
+                        <h4 className="text-xl md:text-2xl font-display font-medium text-white">Hasnain</h4>
+                      </div>
+                    </div>
+                    <a
+                      href="https://wa.me/923141115203"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 px-6 py-3 bg-amber text-black rounded-full font-bold text-sm hover:bg-amber-light transition-all duration-300 group"
+                    >
+                      <Phone size={16} strokeWidth={2} />
+                      <span>0314 1115203</span>
+                      <ArrowUpRight size={14} strokeWidth={2} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Further Details */}
+                <div className="p-6 md:p-8 border border-white/10 rounded-[32px] bg-white/[0.02]">
+                  <div className="flex items-center gap-2 mb-6">
+                    <div className="w-1 h-5 bg-amber rounded-full" />
+                    <h4 className="text-sm uppercase tracking-[0.3em] text-white/60 font-bold">
+                      Further Details
+                    </h4>
+                  </div>
+
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {/* Owais Raza */}
+                    <div className="p-5 border border-white/10 rounded-2xl bg-white/5 hover:border-amber/20 hover:bg-amber/[0.03] transition-all duration-300 group">
+                      <p className="text-xs uppercase tracking-[0.15em] text-white/30 font-bold mb-2">Sales Executive</p>
+                      <h5 className="text-base font-display font-medium text-white mb-3">Owais Raza</h5>
+                      <a href="https://wa.me/923313088010" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-amber text-sm hover:underline underline-offset-4">
+                        <Phone size={14} strokeWidth={1.5} />
+                        0331 3088010
+                      </a>
+                    </div>
+
+                    {/* Muhammad Waqas */}
+                    <div className="p-5 border border-white/10 rounded-2xl bg-white/5 hover:border-amber/20 hover:bg-amber/[0.03] transition-all duration-300 group">
+                      <p className="text-xs uppercase tracking-[0.15em] text-white/30 font-bold mb-2">Sales Executive</p>
+                      <h5 className="text-base font-display font-medium text-white mb-3">Muhammad Waqas</h5>
+                      <a href="https://wa.me/923122311562" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-amber text-sm hover:underline underline-offset-4">
+                        <Phone size={14} strokeWidth={1.5} />
+                        0312 2311562
+                      </a>
+                    </div>
+
+                    {/* Ammar */}
+                    <div className="p-5 border border-white/10 rounded-2xl bg-white/5 hover:border-amber/20 hover:bg-amber/[0.03] transition-all duration-300 group">
+                      <p className="text-xs uppercase tracking-[0.15em] text-white/30 font-bold mb-2">Director of Sales</p>
+                      <h5 className="text-base font-display font-medium text-white mb-3">Ammar</h5>
+                      <a href="https://wa.me/923092071135" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-amber text-sm hover:underline underline-offset-4">
+                        <Phone size={14} strokeWidth={1.5} />
+                        0309 2071135
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           <motion.h2 className="text-4xl md:text-5xl font-display font-light text-white mb-6 uppercase tracking-widest">IQ SHOPPING MALL & RESIDENCIA</motion.h2>
           <motion.h2 className="text-6xl md:text-8xl font-light text-amber mb-16 tracking-tighter">COMING SOON</motion.h2>
 

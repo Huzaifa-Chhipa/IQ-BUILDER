@@ -14,6 +14,8 @@ import Contact from '@/src/components/Contact';
 import Footer from '@/src/components/Footer';
 import Logo from '@/src/components/Logo';
 import WhatsAppFloat from '@/src/components/WhatsAppFloat';
+import SEO from '@/src/components/SEO';
+import SchemaMarkup from '@/src/components/SchemaMarkup';
 import { useSmoothScroll } from '@/src/hooks/useSmoothScroll';
 import AboutUs from './pages/AboutUs';
 import ProjectsPage from './pages/Projects';
@@ -24,6 +26,13 @@ import SaddarCentralDetailsPage from './pages/SaddarCentralDetailsPage';
 function MainLayout() {
   return (
     <>
+      <SchemaMarkup />
+      <SEO
+        title="IQ Builders & Developers | Premier Real Estate & Construction in Karachi"
+        description="IQ Builders & Developers – Karachi's trusted real estate and construction company since 2000. Luxury apartments, commercial plazas, and premium properties in Saddar, Karachi."
+        keywords="IQ Builders, real estate Karachi, construction company Pakistan, luxury apartments Karachi, commercial properties Karachi, property dealers Saddar"
+        ogUrl="https://iqbuildersdevelopers.com/"
+      />
       <Navbar />
       <main className="relative z-10">
         <Hero />

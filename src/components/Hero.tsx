@@ -65,13 +65,10 @@ export default function Hero() {
       
       ctx.clearRect(0, 0, width, height);
 
-      // Draw image in contain mode to avoid cropping the logo (100% scale)
-      let scale = Math.min(width / img.width, height / img.height);
-      
-      // On mobile screens, use cover mode (Math.max) so the animation fills the entire screen
-      if (width < 768) {
-        scale = Math.max(width / img.width, height / img.height);
-      }
+      // Use cover mode on desktop to fill the screen, contain mode on mobile
+      const scale = width >= 768
+        ? Math.max(width / img.width, height / img.height)
+        : Math.min(width / img.width, height / img.height);
 
       const w = img.width * scale;
       const h = img.height * scale;

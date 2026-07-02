@@ -2,22 +2,30 @@ import { motion } from 'motion/react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 export default function ContactUs() {
   return (
     <div className="bg-navy-deep min-h-screen text-white">
       <Navbar />
-      <main className="pt-32 pb-24 container mx-auto px-4 md:px-12">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with IQ Builders & Developers. Contact Hasnain at 0314-1115203 or visit our offices in Karachi. Premium real estate and construction inquiries welcome."
+        keywords="contact IQ Builders, IQ Builders Karachi phone, real estate Karachi contact, construction company Pakistan contact"
+        ogUrl="https://iqbuildersdevelopers.com/contact"
+        canonical="https://iqbuildersdevelopers.com/contact"
+      />
+      <main className="pt-32 pb-24 px-4 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-4xl mx-auto w-full"
+          className="w-full"
         >
           <h1 className="text-5xl md:text-7xl font-display font-light text-center mb-16 px-4">
             CONTACT <span className="text-gold italic">US</span>
           </h1>
 
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 glass-dark p-6 md:p-12 rounded-[20px] md:rounded-[40px] border border-white/10">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 glass-dark p-6 md:p-12 rounded-[20px] md:rounded-[40px] border border-white/10 w-full">
             <div className="space-y-8 md:space-y-10 w-full">
               <div className="flex items-start gap-4 md:gap-6">
                 <div className="w-12 h-12 flex-shrink-0 bg-white/5 border border-white/10 flex items-center justify-center text-gold rounded-full">

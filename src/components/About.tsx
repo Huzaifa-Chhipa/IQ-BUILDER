@@ -29,7 +29,7 @@ export default function About() {
             >
               <img
                 src={c2Img}
-                alt="Alexander Sterling"
+                alt="IQ Builders & Developers – Premium Real Estate & Construction Karachi"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />

@@ -1,0 +1,8 @@
+# robots.txt for IQ Builders & Developers
+User-agent: *
+Allow: /
+
+Sitemap: https://iqbuildersdevelopers.com/sitemap.xml
+
+# Disallow admin/private areas if any
+# Disallow: /admin/
